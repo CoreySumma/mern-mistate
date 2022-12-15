@@ -1,18 +1,10 @@
-export default function NewOrderPage() {
+import NewEntryForm from '../../components/NewEntryForm/NewEntryForm'
+
+export default function NewOrderPage({ user, addEntry }) {
   return (
     <>
     <h1>How has today been?</h1>
-    <div className="App">
-    <form>
-      <label>NAME</label>
-      <label>EMOTION</label>
-      <select name="emotion">
-        <option value="😁">Happy</option>
-        <option value="😐">Neutral</option>
-        <option value="😠">Angry</option>
-      </select>
-    </form>
-  </div>
-  </>
+    < NewEntryForm user={user} addEntry={addEntry}/>
+    </>
   );
 }

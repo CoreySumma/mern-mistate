@@ -1,5 +1,5 @@
 
-export default function OrderHistoryPage() {
+export default function EntryHistoryPage({ user }) {
  
   
   return (
