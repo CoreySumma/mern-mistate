@@ -4,7 +4,8 @@ const express = require('express');
 const router = express.Router();
 const entryCtrl = require('../../controllers/api/entries');
 
-router.post('/', entryCtrl.create);
+router.get('/', entryCtrl.index);
+router.post('/new', entryCtrl.create);
 
 module.exports = router;
 

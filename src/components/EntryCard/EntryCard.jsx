@@ -1,5 +1,9 @@
-export default function EntryCard({}) {
+
+
+export default function EntryCard({entry}) {
   return (
-    <h1>I am an entry you wrote</h1> //add in sections from submission
+    <div>
+      <p>{entry.title}</p>
+    </div> 
   )
 }

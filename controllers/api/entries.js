@@ -1,7 +1,13 @@
 const Entry = require('../../models/entrySchema');
 
 module.exports = {
+  index,
   create,
+}
+
+async function index(req, res) {
+  const entries = await Entry.find({ user: req.user._id });
+  res.json(entries)
 }
 
 async function create(req, res) {

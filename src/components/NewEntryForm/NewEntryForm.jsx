@@ -1,14 +1,15 @@
 import { useState } from "react";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function NewEntryForm({ addEntry }) {
-  const navigate = Navigate;
+  const navigate = useNavigate();
   const [entryContent, setEntryContent] = useState({
     title: "",
     text: "",
     emotion: "Feelin' Tip Top 😁",
     day: "Monday"
   })
+  
   function handleSubmit(evt) {
     evt.preventDefault();
     addEntry(entryContent);

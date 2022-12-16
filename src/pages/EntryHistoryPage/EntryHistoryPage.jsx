@@ -1,9 +1,16 @@
+import EntryCard from "../../components/EntryCard/EntryCard"
 
-export default function EntryHistoryPage({ user }) {
+export default function EntryHistoryPage({ entries }) {
  
   
   return (
     <>
+      <h1>My Week So Far</h1>
+      <div>
+      {entries.map((entry, idx) => (
+        <EntryCard entry={entry} key={idx} />
+      ))}
+      </div>
       <br />
       <br />
       <hr />

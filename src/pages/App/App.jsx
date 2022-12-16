@@ -10,19 +10,22 @@ import EntryDetailPage from '../EntryDetail/EntryDetailPage';
 import { useEffect } from 'react';
 import * as entryAPI from '../../utilities/entries-api'
 
-
 export default function App() {
   const [user, setUser] = useState(getUser());
-  
   const [entries, setEntries] = useState([]);
 
-  const [showEntries, setShowEntries] = useState(true);
-
   async function addEntry(entry) {
-    console.log(entry);
     const newEntry = await entryAPI.create(entry);
     setEntries([...entries, newEntry]);
   }
+
+  useEffect (function() {
+    async function displayEntries() {
+      const entryData = await entryAPI.index();
+      setEntries(entryData);
+    }
+    if (user) displayEntries();
+  }, [user])
 
   return (
     <main className="App">
@@ -32,7 +35,7 @@ export default function App() {
             <Routes>
               {/* Route components in here */}
               <Route path="/entries/new" element={<NewEntryPage addEntry={addEntry} user={user}/>} />
-              <Route path="/entries" element={<EntryHistoryPage user={user}/>} />
+              <Route path="/entries" element={<EntryHistoryPage user={user} setEntries={setEntries} entries={entries}/>} />
             </Routes>
           </>
           :
