@@ -16,6 +16,7 @@ export default function App() {
 
   async function addEntry(entry) {
     const newEntry = await entryAPI.create(entry);
+    console.log(newEntry)
     setEntries([...entries, newEntry]);
   }
 

@@ -9,7 +9,7 @@ export default function NewEntryForm({ addEntry }) {
     emotion: "Feelin' Tip Top 😁",
     day: "Monday"
   })
-  
+
   function handleSubmit(evt) {
     evt.preventDefault();
     addEntry(entryContent);
@@ -34,9 +34,9 @@ export default function NewEntryForm({ addEntry }) {
 
   return (
     <>
-      <div className="">
+      <div className="form-container">
         <form onSubmit={handleSubmit}>
-          <label>Title</label>
+          <label>Title:</label>
           <input
             name="title"
             value={entryContent.title}
@@ -47,7 +47,7 @@ export default function NewEntryForm({ addEntry }) {
             pattern=".{1,}"
           />
 
-          <label>Content</label>
+          <label>Content:</label>
           <input
             name="text"
             value={entryContent.text}
@@ -58,21 +58,19 @@ export default function NewEntryForm({ addEntry }) {
             pattern=".{1,}"
           />
 
-          <label>Emotion</label>
+          <label>Emotion:</label>
           <select name="emotion"
             value={entryContent.emotion}
             onChange={handleChange}
             required
           >
-
-
-            <option>Feelin' Tip Top 😁</option>
-            <option>Bleh 😐</option>
-            <option>Sad 🙁</option>
-            <option>Drying My Tears 😭</option>
+            <option value="😁">Feelin' Tip Top </option>
+            <option value="😐">Bleh </option>
+            <option value="🙁">Sad </option>
+            <option value="😭">Drying My Tears </option>
           </select>
 
-          <label>Day</label>
+          <label>Day:</label>
           <select name="day" value={entryContent.day} onChange={handleChange}>
             <option>Monday</option>
             <option>Tuesday</option>
