@@ -1,5 +1,7 @@
+import { Link } from 'react-router-dom'
+
 export default function EntryCard({ entry }) {
-  
+
   const days = {
     0: 'sunday',
     1: 'monday',
@@ -11,8 +13,10 @@ export default function EntryCard({ entry }) {
   }
 
   return (
+      <Link to= {`/entries/${entry.title}`}>
     <div>
       <p>{entry.emotion}{entry.title}</p>
     </div>
+    </Link>
   )
 }

@@ -1,4 +1,4 @@
-const Entry = require('../../models/entrySchema');
+const Entry = require('../../models/entry');
 
 module.exports = {
   index,

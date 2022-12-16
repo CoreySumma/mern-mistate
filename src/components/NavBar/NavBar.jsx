@@ -2,15 +2,16 @@ import { Link } from 'react-router-dom';
 import * as userService from '../../utilities/users-service';
 
 export default function NavBar({ user, setUser }) {
+
+  
+
   function handleLogOut() {
     userService.logOut();
     setUser(null);
   }
 
   return (
-    <nav>
-      <div className='btn'>Booty</div>
-      <Link to="/entries">MiState</Link>
+    <nav className="navbar bg-light">
       <Link to="/entries">My Week</Link>
       &nbsp; || &nbsp;
       <Link to="/entries/new">New Entry</Link>
@@ -20,3 +21,4 @@ export default function NavBar({ user, setUser }) {
     </nav>
   );
 }
+

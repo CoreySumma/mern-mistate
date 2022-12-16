@@ -1,5 +1,15 @@
-export default function EntryDetailPage() {
+import { useParams } from "react-router-dom"
+
+export default function EntryDetailPage({entries}) {
+  const { entryName } = useParams();
+  const entry = entries.find((entry) => entry.title === entryName);
+  let date = new Date(entry.createdAt);
+  const dateOptions = {weekday: 'long', year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric'}
   return (
-    <h1>I show all of the details of the entry clicked on via link</h1>
+    <>
+    <div>{date.toLocaleDateString(dateOptions)}</div>
+    <div>{entry.text}</div>
+    </>
   )
 }
+Blob

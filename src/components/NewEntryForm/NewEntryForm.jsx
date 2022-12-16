@@ -70,7 +70,7 @@ export default function NewEntryForm({ addEntry }) {
             <option value="😭">Drying My Tears </option>
           </select>
 
-          <label>Day:</label>
+           {/* <label>Day:</label>
           <select name="day" value={entryContent.day} onChange={handleChange}>
             <option>Monday</option>
             <option>Tuesday</option>
@@ -79,11 +79,11 @@ export default function NewEntryForm({ addEntry }) {
             <option>Friday</option>
             <option>Saturday</option>
             <option>Sunday</option>
-          </select>
+          </select> */}
           <button type="submit">LOG MY STATE</button>
         </form>
       </div>
-    </>
+    </> 
   )
 }
 

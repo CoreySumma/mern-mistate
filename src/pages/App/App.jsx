@@ -20,7 +20,7 @@ export default function App() {
     setEntries([...entries, newEntry]);
   }
 
-  useEffect (function() {
+  useEffect(function () {
     async function displayEntries() {
       const entryData = await entryAPI.index();
       setEntries(entryData);
@@ -30,17 +30,18 @@ export default function App() {
 
   return (
     <main className="App">
-      { user ?
-          <>
-            <NavBar user={user} setUser={setUser} />
-            <Routes>
-              {/* Route components in here */}
-              <Route path="/entries/new" element={<NewEntryPage addEntry={addEntry} user={user}/>} />
-              <Route path="/entries" element={<EntryHistoryPage user={user} setEntries={setEntries} entries={entries}/>} />
-            </Routes>
-          </>
-          :
-          <AuthPage setUser={setUser} />
+      {user ?
+        <>
+          <NavBar user={user} setUser={setUser} />
+          <Routes>
+            {/* Route components in here */}
+            <Route path="/entries/new" element={<NewEntryPage addEntry={addEntry} user={user} />} />
+            <Route path="/entries" element={<EntryHistoryPage user={user} setEntries={setEntries} entries={entries} />} />
+            <Route path="/entries/:entryName" element={<EntryDetailPage user={user} entries={entries} />} />
+          </Routes>
+        </>
+        :
+        <AuthPage setUser={setUser} />
       }
     </main>
   );
