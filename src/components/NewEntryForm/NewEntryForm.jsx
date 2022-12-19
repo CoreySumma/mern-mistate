@@ -6,7 +6,7 @@ export default function NewEntryForm({ addEntry }) {
   const [entryContent, setEntryContent] = useState({
     title: "",
     text: "",
-    emotion: "Feelin' Tip Top 😁",
+    emotion: "Feelin' Tip Top",
     day: "Monday"
   })
 
@@ -16,8 +16,8 @@ export default function NewEntryForm({ addEntry }) {
     setEntryContent({
       title: "",
       text: "",
-      emotion: "Feelin' Tip Top 😁",
-      day: "Monday"
+      emotion: "",
+      day: ""
     })
     navigate('/entries')
   }
@@ -48,7 +48,7 @@ export default function NewEntryForm({ addEntry }) {
           />
 
           <label>Content:</label>
-          <input
+          <textarea
             name="text"
             value={entryContent.text}
             type="text"

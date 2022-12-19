@@ -1,7 +1,9 @@
 import { Component } from 'react';
 import { signUp } from '../../utilities/users-service';
+import { useNavigate } from 'react-router-dom';
 
 export default class SignUpForm extends Component {
+
   state = {
     name: '',
     email: '',
@@ -32,6 +34,8 @@ export default class SignUpForm extends Component {
       // Probably due to a duplicate email
       this.setState({ error: 'Sign Up Failed - Try Again' });
     }
+    const navigate = useNavigate
+    navigate('/entries')
   };
 
   render() {

@@ -3,21 +3,31 @@ import { Routes, Route } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import './App.css';
 import AuthPage from '../AuthPage/AuthPage';
+import HomePage from '../HomePage/HomePage';
 import NewEntryPage from '../NewEntryPage/NewEntryPage';
 import EntryHistoryPage from '../EntryHistoryPage/EntryHistoryPage';
 import NavBar from '../../components/NavBar/NavBar';
 import EntryDetailPage from '../EntryDetail/EntryDetailPage';
 import { useEffect } from 'react';
 import * as entryAPI from '../../utilities/entries-api'
+import { Navigate } from 'react-router-dom';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
   const [entries, setEntries] = useState([]);
+  const navigate = Navigate;
+
 
   async function addEntry(entry) {
     const newEntry = await entryAPI.create(entry);
-    console.log(newEntry)
     setEntries([...entries, newEntry]);
+  }
+
+  async function handleDelete(id) {
+    await entryAPI.deleteEntry(id);
+    const remainingEntries = entries.filter(entry => entry._id !== id);
+    setEntries(remainingEntries);
+    // navigate('/entries')
   }
 
   useEffect(function () {
@@ -37,7 +47,8 @@ export default function App() {
             {/* Route components in here */}
             <Route path="/entries/new" element={<NewEntryPage addEntry={addEntry} user={user} />} />
             <Route path="/entries" element={<EntryHistoryPage user={user} setEntries={setEntries} entries={entries} />} />
-            <Route path="/entries/:entryName" element={<EntryDetailPage user={user} entries={entries} />} />
+            <Route path="/entries/:entryName" element={<EntryDetailPage user={user} entries={entries} handleDelete={handleDelete} />} />
+            <Route path="/home" element={<HomePage user={user} />} />
           </Routes>
         </>
         :

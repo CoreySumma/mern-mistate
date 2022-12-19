@@ -3,6 +3,7 @@ const Entry = require('../../models/entry');
 module.exports = {
   index,
   create,
+  delete: deleteEntry
 }
 
 async function index(req, res) {
@@ -18,4 +19,10 @@ async function create(req, res) {
   } catch (err) {
     res.status(400).json(err);
   }
+}
+
+async function deleteEntry(req, res) {
+  req.body.user = req.user._id;
+  const entry = await Entry.findByIdAndDelete(req.params.id)
+  res.json(entry);
 }
