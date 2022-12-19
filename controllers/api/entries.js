@@ -15,10 +15,9 @@ async function index(req, res) {
 async function updateEntry(req, res, next) {
   await Entry.findByIdAndUpdate(
     { _id: req.params.id}, 
-    req.body
-  )
-  const entry = await Entry.find({ user: req.use._id })
-  res.json(entry)
+    req.body)
+    const entry = await Entry.find({ user: req.user._id })
+    res.json(entry)
 }
 
 async function create(req, res) {

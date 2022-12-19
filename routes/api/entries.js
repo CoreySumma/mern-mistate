@@ -6,7 +6,7 @@ const entryCtrl = require('../../controllers/api/entries');
 
 router.get('/', entryCtrl.index);
 router.post('/new', entryCtrl.create);
-router.put('/update/:id'), entryCtrl.updateEntry
+router.put('/:id/update', entryCtrl.updateEntry);
 router.delete('/:id', entryCtrl.delete);
 
 module.exports = router;

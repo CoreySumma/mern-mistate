@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom"
 import { useNavigate } from "react-router-dom";
 
-export default function EntryDetailPage({entries, handleDelete, handleUpdateEntry}) {
+export default function EntryDetailPage({entries, handleDelete}) {
   const navigate = useNavigate();
   const { entryName } = useParams();
   const entry = entries.find((entry) => entry.title === entryName);

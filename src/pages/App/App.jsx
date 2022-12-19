@@ -10,13 +10,13 @@ import NavBar from '../../components/NavBar/NavBar';
 import EntryDetailPage from '../EntryDetail/EntryDetailPage';
 import { useEffect } from 'react';
 import * as entryAPI from '../../utilities/entries-api'
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import UpdateNotePage from '../../components/UpdateEntryForm/UpdateEntryForm';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
   const [entries, setEntries] = useState([]);
-
+  const navigate = useNavigate();
 
   async function addEntry(entry) {
     const newEntry = await entryAPI.create(entry);
@@ -24,8 +24,9 @@ export default function App() {
   }
 
   async function handleUpdateEntry(entryFormData, id) {
-   const handleUpdatedEntries = await entryAPI.updateEntry(entryFormData, id);
-   setEntries(handleUpdatedEntries);
+   await entryAPI.updateEntry(entryFormData, id);
+   const updatedEntries = await entryAPI.index();
+   setEntries(updatedEntries);
   }
 
   async function handleDelete(id) {

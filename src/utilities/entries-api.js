@@ -14,5 +14,5 @@ export async function create(entryData) {
 }
 
 export async function updateEntry(entryFormData, id) {
-  return sendRequest(`${BASE_URL}/update/${id}`, "PUT", entryFormData)
+  return sendRequest(`${BASE_URL}/${id}/update`, "PUT", entryFormData)
 }
