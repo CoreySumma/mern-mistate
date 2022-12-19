@@ -1,15 +1,15 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 
 export default function UpdateEntryForm({entries, handleUpdateEntry}) {
-  const {id} = useParams()
+  const {id} = useParams();
+  const navigate = useNavigate();
   const updateEntry = entries.find(entry => entry._id === id);
   const [formData, setFormData] = useState(updateEntry);
   if (!updateEntry) return null;
-
-  console.log(formData)
 
   function handleChange(evt) {
     const updatedEntryForm = {...updateEntry, [evt.target.name]:evt.target.value}
@@ -19,6 +19,7 @@ export default function UpdateEntryForm({entries, handleUpdateEntry}) {
   function handleSubmit(evt) {
     evt.preventDefault();
     handleUpdateEntry(formData, id);
+    navigate('/entries')
   }
 
   return (

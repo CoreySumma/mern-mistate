@@ -33,6 +33,7 @@ export default function App() {
     await entryAPI.deleteEntry(id);
     const remainingEntries = entries.filter(entry => entry._id !== id);
     setEntries(remainingEntries);
+    navigate('/entries');
   }
 
   useEffect(function () {
