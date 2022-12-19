@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 
-export default function EntryDetailPage({entries, handleDelete}) {
+export default function EntryDetailPage({entries, handleDelete, handleUpdateEntry}) {
+  const navigate = useNavigate();
   const { entryName } = useParams();
   const entry = entries.find((entry) => entry.title === entryName);
   let date = new Date(entry.createdAt);
@@ -9,7 +11,8 @@ export default function EntryDetailPage({entries, handleDelete}) {
     <>
     <div>{date.toLocaleDateString(dateOptions)}</div>
     <div>{entry.text}</div>
-    <button onClick={() => handleDelete(entry._id)}>Delete This Day</button>
+    <button onClick={() => handleDelete(entry._id)}>Delete This Entry</button>
+    <button onClick={() => navigate(`/entries/${entry._id}/update`)}>Edit This Entry</button>
     </>
   )
 }

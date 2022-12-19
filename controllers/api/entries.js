@@ -2,6 +2,7 @@ const Entry = require('../../models/entry');
 
 module.exports = {
   index,
+  updateEntry,
   create,
   delete: deleteEntry
 }
@@ -9,6 +10,15 @@ module.exports = {
 async function index(req, res) {
   const entries = await Entry.find({ user: req.user._id });
   res.json(entries)
+}
+
+async function updateEntry(req, res, next) {
+  await Entry.findByIdAndUpdate(
+    { _id: req.params.id}, 
+    req.body
+  )
+  const entry = await Entry.find({ user: req.use._id })
+  res.json(entry)
 }
 
 async function create(req, res) {

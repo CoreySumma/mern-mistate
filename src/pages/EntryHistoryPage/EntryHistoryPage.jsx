@@ -37,6 +37,7 @@ export default function EntryHistoryPage({ entries }) {
   return (
     <>
       <h1>Your Week So Far...</h1>
+      <p>(You can choose to delete old entries, OR keep them as a reference for trends.)</p>
       <div>
         {/* {entries.map((entry, idx) => (
           <EntryCard entry={entry} key={idx} />

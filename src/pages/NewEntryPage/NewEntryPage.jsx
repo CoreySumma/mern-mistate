@@ -1,6 +1,6 @@
 import NewEntryForm from '../../components/NewEntryForm/NewEntryForm'
 
-export default function NewOrderPage({ user, addEntry }) {
+export default function NewEntryPage({ user, addEntry }) {
   return (
     <>
     <h1>How are you {user.name}?</h1>

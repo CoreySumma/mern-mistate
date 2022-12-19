@@ -12,3 +12,7 @@ export async function deleteEntry(id) {
 export async function create(entryData) {
   return sendRequest(`${BASE_URL}/new`, 'POST', entryData);
 }
+
+export async function updateEntry(entryFormData, id) {
+  return sendRequest(`${BASE_URL}/update/${id}`, "PUT", entryFormData)
+}

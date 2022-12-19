@@ -11,11 +11,11 @@ import EntryDetailPage from '../EntryDetail/EntryDetailPage';
 import { useEffect } from 'react';
 import * as entryAPI from '../../utilities/entries-api'
 import { Navigate } from 'react-router-dom';
+import UpdateNotePage from '../../components/UpdateEntryForm/UpdateEntryForm';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
   const [entries, setEntries] = useState([]);
-  const navigate = Navigate;
 
 
   async function addEntry(entry) {
@@ -23,11 +23,15 @@ export default function App() {
     setEntries([...entries, newEntry]);
   }
 
+  async function handleUpdateEntry(entryFormData, id) {
+   const handleUpdatedEntries = await entryAPI.updateEntry(entryFormData, id);
+   setEntries(handleUpdatedEntries);
+  }
+
   async function handleDelete(id) {
     await entryAPI.deleteEntry(id);
     const remainingEntries = entries.filter(entry => entry._id !== id);
     setEntries(remainingEntries);
-    // navigate('/entries')
   }
 
   useEffect(function () {
@@ -45,10 +49,11 @@ export default function App() {
           <NavBar user={user} setUser={setUser} />
           <Routes>
             {/* Route components in here */}
-            <Route path="/entries/new" element={<NewEntryPage addEntry={addEntry} user={user} />} />
-            <Route path="/entries" element={<EntryHistoryPage user={user} setEntries={setEntries} entries={entries} />} />
-            <Route path="/entries/:entryName" element={<EntryDetailPage user={user} entries={entries} handleDelete={handleDelete} />} />
             <Route path="/home" element={<HomePage user={user} />} />
+            <Route path="/entries" element={<EntryHistoryPage user={user} setEntries={setEntries} entries={entries} />} />
+            <Route path="/entries/:entryName" element={<EntryDetailPage user={user} entries={entries} handleDelete={handleDelete} handleUpdateEntry={handleUpdateEntry}/>} />
+            <Route path="/entries/new" element={<NewEntryPage addEntry={addEntry} user={user} />} />
+            <Route path="/entries/:id/update" element={<UpdateNotePage handleUpdateEntry={handleUpdateEntry} entries={entries} user={user} />} />
           </Routes>
         </>
         :
