@@ -51,7 +51,7 @@ export default function App() {
           <NavBar user={user} setUser={setUser} />
           <Routes>
             {/* Route components in here */}
-            <Route path="/home" element={<HomePage user={user} />} />
+            <Route path="/" element={<HomePage user={user} />} />
             <Route path="/entries" element={<EntryHistoryPage user={user} setEntries={setEntries} entries={entries} />} />
             <Route path="/entries/:entryName" element={<EntryDetailPage user={user} entries={entries} handleDelete={handleDelete} handleUpdateEntry={handleUpdateEntry}/>} />
             <Route path="/entries/new" element={<NewEntryPage addEntry={addEntry} user={user} />} />

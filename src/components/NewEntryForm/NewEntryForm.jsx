@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { MDBTextArea, MDBCard } from 'mdb-react-ui-kit';
 
 export default function NewEntryForm({ addEntry }) {
   const navigate = useNavigate();
   const [entryContent, setEntryContent] = useState({
-    title: "",
-    text: "",
-    emotion: "Feelin' Tip Top",
-    day: "Monday"
+    title: "Name Your Entry",
+    text: "What Happened?",
+    emotion: "Select One",
+    day: ""
   })
 
   function handleSubmit(evt) {
@@ -23,18 +24,12 @@ export default function NewEntryForm({ addEntry }) {
   }
 
   function handleChange(evt) {
-  //   setEntryContent([{
-  //   title: evt.target.value,
-  //   text: evt.target.value, 
-  //   emotion: evt.target.value,
-  //   day: evt.target.value,
-  // }])
-  setEntryContent({...entryContent, [evt.target.name]: evt.target.value}) 
- }
+    setEntryContent({ ...entryContent, [evt.target.name]: evt.target.value });
+  }
 
   return (
     <>
-      <div className="form-container">
+      <MDBCard>
         <form onSubmit={handleSubmit}>
           <label>Title:</label>
           <input
@@ -48,7 +43,9 @@ export default function NewEntryForm({ addEntry }) {
           />
 
           <label>Content:</label>
-          <textarea
+          <MDBTextArea
+            columns={40}
+            rows={6}
             name="text"
             value={entryContent.text}
             type="text"
@@ -69,21 +66,10 @@ export default function NewEntryForm({ addEntry }) {
             <option value="🙁">Sad </option>
             <option value="😭">Drying My Tears </option>
           </select>
-
-           {/* <label>Day:</label>
-          <select name="day" value={entryContent.day} onChange={handleChange}>
-            <option>Monday</option>
-            <option>Tuesday</option>
-            <option>Wednesday</option>
-            <option>Thursday</option>
-            <option>Friday</option>
-            <option>Saturday</option>
-            <option>Sunday</option>
-          </select> */}
           <button type="submit">LOG MY STATE</button>
         </form>
-      </div>
-    </> 
+      </MDBCard>
+    </>
   )
 }
 

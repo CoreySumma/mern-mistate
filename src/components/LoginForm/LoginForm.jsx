@@ -7,6 +7,7 @@ export default function LoginForm({ setUser }) {
     email: '',
     password: ''
   });
+  
   const [error, setError] = useState('');
   const navigate = useNavigate;
 
@@ -27,7 +28,6 @@ export default function LoginForm({ setUser }) {
     } catch {
       setError('Log In Failed - Try Again');
     }
-    navigate('/entries')
   }
 
   return (

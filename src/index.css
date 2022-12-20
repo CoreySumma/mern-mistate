@@ -83,7 +83,7 @@ code {
   background-color: var(--tan-1);
   border: .1vmin solid var(--tan-3);
   border-radius: 1vmin;
-  width: 50%;
+  width: 70%;
   display: flex;
   flex-direction: column;
   justify-items: center;
@@ -101,6 +101,11 @@ form {
   grid-template-columns: 1fr 3fr;
   gap: 1.25vmin;
   color: var(--text-light);
+}
+
+.text-grid {
+  grid-template-areas:
+  "text text" 
 }
 
 label {

@@ -17,7 +17,6 @@ import {
 export default function NavBar({ user, setUser }) {
   const [showNavColorSecond, setShowNavColorSecond] = useState(false);
 
-
   function handleLogOut() {
     userService.logOut();
     setUser(null);
@@ -40,7 +39,7 @@ export default function NavBar({ user, setUser }) {
         <MDBCollapse show={showNavColorSecond} navbar id='navbarColor02'>
           <MDBNavbarNav className='me-auto mb-2 mb-lg-0'>
             <MDBNavbarItem className='active'>
-              <MDBNavbarLink aria-current='page' href='/home'>
+              <MDBNavbarLink aria-current='page' href='/'>
                 Home
               </MDBNavbarLink>
             </MDBNavbarItem>
