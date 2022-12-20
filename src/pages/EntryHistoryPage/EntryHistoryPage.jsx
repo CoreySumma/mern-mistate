@@ -35,13 +35,16 @@ export default function EntryHistoryPage({ entries }) {
 
 
 
+
+
   return (
     <>
       <h1>Your Week So Far...</h1>
       <p>(You can choose to delete old entries, OR keep them as a reference for trends.)</p>
       <div>
+        <img src="/assets/stocks.png" />
         <br />
-        <br />
+        <button>Let's start fresh!</button>
         <hr />
         <MDBTypography tag='div' className='display-5 pb-3 mb-3 border-bottom'>
           <h1>Monday</h1>

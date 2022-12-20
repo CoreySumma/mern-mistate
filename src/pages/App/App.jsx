@@ -24,9 +24,9 @@ export default function App() {
   }
 
   async function handleUpdateEntry(entryFormData, id) {
-   await entryAPI.updateEntry(entryFormData, id);
-   const updatedEntries = await entryAPI.index();
-   setEntries(updatedEntries);
+    await entryAPI.updateEntry(entryFormData, id);
+    const updatedEntries = await entryAPI.index();
+    setEntries(updatedEntries);
   }
 
   async function handleDelete(id) {
@@ -53,7 +53,7 @@ export default function App() {
             {/* Route components in here */}
             <Route path="/" element={<HomePage user={user} />} />
             <Route path="/entries" element={<EntryHistoryPage user={user} setEntries={setEntries} entries={entries} />} />
-            <Route path="/entries/:entryName" element={<EntryDetailPage user={user} entries={entries} handleDelete={handleDelete} handleUpdateEntry={handleUpdateEntry}/>} />
+            <Route path="/entries/:entryName" element={<EntryDetailPage user={user} entries={entries} handleDelete={handleDelete} handleUpdateEntry={handleUpdateEntry} />} />
             <Route path="/entries/new" element={<NewEntryPage addEntry={addEntry} user={user} />} />
             <Route path="/entries/:id/update" element={<UpdateNotePage handleUpdateEntry={handleUpdateEntry} entries={entries} user={user} />} />
           </Routes>
