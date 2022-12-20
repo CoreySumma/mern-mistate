@@ -39,5 +39,7 @@ async function deleteEntry(req, res) {
 
 async function deleteAll(req, res) {
   req.body.user = req.user._id;
+  
   await Entry.deleteMany({});
+  res.json(req.body)
 }

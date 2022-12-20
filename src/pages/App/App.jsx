@@ -36,9 +36,11 @@ export default function App() {
     navigate('/entries');
   }
 
-  async function handleDeleteAll() {
-    await entryAPI.deleteAllEntries();
-    setEntries([]);
+  async function handleDeleteAll(entries) {
+    await entryAPI.deleteAllEntries(entries);
+    const updatedEntries = await entryAPI.index();
+    setEntries(updatedEntries);
+    console.log(updatedEntries)
     navigate('/entries/new')
   }
 
