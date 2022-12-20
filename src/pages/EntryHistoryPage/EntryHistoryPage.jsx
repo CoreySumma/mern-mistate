@@ -2,7 +2,7 @@ import EntryCard from "../../components/EntryCard/EntryCard"
 import { useState, useEffect } from "react";
 import { MDBTypography } from 'mdb-react-ui-kit';
 
-export default function EntryHistoryPage({ entries }) {
+export default function EntryHistoryPage({ entries, handleDeleteAll }) {
 
 
   const [monday, setMonday] = useState([]);
@@ -44,7 +44,7 @@ export default function EntryHistoryPage({ entries }) {
       <div>
         <img src="/assets/stocks.png" />
         <br />
-        <button>Let's start fresh!</button>
+        <button onClick={handleDeleteAll()}>Let's start fresh!</button>
         <hr />
         <MDBTypography tag='div' className='display-5 pb-3 mb-3 border-bottom'>
           <h1>Monday</h1>

@@ -4,7 +4,8 @@ module.exports = {
   index,
   updateEntry,
   create,
-  delete: deleteEntry
+  delete: deleteEntry,
+  deleteAll
 }
 
 async function index(req, res) {
@@ -34,4 +35,9 @@ async function deleteEntry(req, res) {
   req.body.user = req.user._id;
   const entry = await Entry.findByIdAndDelete(req.params.id)
   res.json(entry);
+}
+
+async function deleteAll(req, res) {
+  req.body.user = req.user._id;
+  await Entry.deleteMany({});
 }

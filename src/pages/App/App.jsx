@@ -36,6 +36,12 @@ export default function App() {
     navigate('/entries');
   }
 
+  async function handleDeleteAll() {
+    await entryAPI.deleteAllEntries();
+    setEntries([]);
+    navigate('/entries/new')
+  }
+
   useEffect(function () {
     async function displayEntries() {
       const entryData = await entryAPI.index();
@@ -52,7 +58,7 @@ export default function App() {
           <Routes>
             {/* Route components in here */}
             <Route path="/" element={<HomePage user={user} />} />
-            <Route path="/entries" element={<EntryHistoryPage user={user} setEntries={setEntries} entries={entries} />} />
+            <Route path="/entries" element={<EntryHistoryPage user={user} setEntries={setEntries} entries={entries} handleDeleteAll={handleDeleteAll}/>} />
             <Route path="/entries/:entryName" element={<EntryDetailPage user={user} entries={entries} handleDelete={handleDelete} handleUpdateEntry={handleUpdateEntry} />} />
             <Route path="/entries/new" element={<NewEntryPage addEntry={addEntry} user={user} />} />
             <Route path="/entries/:id/update" element={<UpdateNotePage handleUpdateEntry={handleUpdateEntry} entries={entries} user={user} />} />
