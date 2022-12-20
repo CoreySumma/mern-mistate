@@ -1,5 +1,6 @@
 import EntryCard from "../../components/EntryCard/EntryCard"
 import { useState, useEffect } from "react";
+import { MDBTypography } from 'mdb-react-ui-kit';
 
 export default function EntryHistoryPage({ entries }) {
 
@@ -42,31 +43,42 @@ export default function EntryHistoryPage({ entries }) {
         <br />
         <br />
         <hr />
-        <div>
+        <MDBTypography tag='div' className='display-5 pb-3 mb-3 border-bottom'>
           <h1>Monday</h1>
+          <div style={monday.length > 0 ? { border: "1px solid rgb(220, 219, 220)" } : null} />
           {monday.length > 0 ? monday.map((entry, idx) => (<EntryCard entry={entry} key={idx} />)) : <h1>No Entry For This Day</h1>}
-        </div>
-        <hr />
-        <h1>Tuesday</h1>
-        {tuesday.length > 0 ? tuesday.map((entry, idx) => (<EntryCard entry={entry} key={idx} />)) : <h1>No Entry For This Day</h1>}
-        <hr />
-        <h1>Wednesday</h1>
-        {wednesday.length > 0 ? wednesday.map((entry, idx) => (<EntryCard entry={entry} key={idx} />)) : <h1>No Entry For This Day</h1>}
-        <hr />
-        <h1>Thursday</h1>
-        {thursday.length > 0 ? thursday.map((entry, idx) => (<EntryCard entry={entry} key={idx} />)) : <h1>No Entry For This Day</h1>}
-        <hr />
-        <h1>Friday</h1>
-        {friday.length > 0 ? friday.map((entry, idx) => (<EntryCard entry={entry} key={idx} />)) : <h1>No Entry For This Day</h1>}
-        <hr />
-        <h1>Saturday</h1>
-        {saturday.length > 0 ? saturday.map((entry, idx) => (<EntryCard entry={entry} key={idx} />)) : <h1>No Entry For This Day</h1>}
-        <hr />
-        <h1>Sunday</h1>
-        {sunday.length > 0 ? sunday.map((entry, idx) => (<EntryCard entry={entry} key={idx} />)) : <h1>No Entry For This Day</h1>}
-        <hr />
+        </MDBTypography>
+        <MDBTypography tag='div' className='display-5 pb-3 mb-3 border-bottom'>
+          <h1>Tuesday</h1>
+          <div style={tuesday.length > 0 ? { border: "1px solid rgb(220, 219, 220)" } : null} />
+          {tuesday.length > 0 ? tuesday.map((entry, idx) => (<EntryCard entry={entry} key={idx} />)) : <h1>No Entry For This Day</h1>}
+        </MDBTypography>
+        <MDBTypography tag='div' className='display-5 pb-3 mb-3 border-bottom'>
+          <h1>Wednesday</h1>
+          <div style={wednesday.length > 0 ? { border: "1px solid rgb(220, 219, 220)" } : null} />
+          {wednesday.length > 0 ? wednesday.map((entry, idx) => (<EntryCard entry={entry} key={idx} />)) : <h1>No Entry For This Day</h1>}
+        </MDBTypography>
+        <MDBTypography tag='div' className='display-5 pb-3 mb-3 border-bottom'>
+          <h1>Thursday</h1>
+          <div style={thursday.length > 0 ? { border: "1px solid rgb(220, 219, 220)" } : null} />
+          {thursday.length > 0 ? thursday.map((entry, idx) => (<EntryCard entry={entry} key={idx} />)) : <h1>No Entry For This Day</h1>}
+        </MDBTypography>
+        <MDBTypography tag='div' className='display-5 pb-3 mb-3 border-bottom'>
+          <h1>Friday</h1>
+          <div style={friday.length > 0 ? { border: "1px solid rgb(220, 219, 220)" } : null} />
+          {friday.length > 0 ? friday.map((entry, idx) => (<EntryCard entry={entry} key={idx} />)) : <h1>No Entry For This Day</h1>}
+        </MDBTypography>
+        <MDBTypography tag='div' className='display-5 pb-3 mb-3 border-bottom'>
+          <h1>Saturday</h1>
+          <div style={saturday.length > 0 ? { border: "1px solid rgb(220, 219, 220)" } : null} />
+          {saturday.length > 0 ? saturday.map((entry, idx) => (<EntryCard entry={entry} key={idx} />)) : <h1>No Entry For This Day</h1>}
+        </MDBTypography>
+        <MDBTypography tag='div' className='display-5 pb-3 mb-3 border-bottom'>
+          <h1>Sunday</h1>
+          <div style={sunday.length > 0 ? { border: "1px solid rgb(220, 219, 220)" } : null} />
+          {sunday.length > 0 ? sunday.map((entry, idx) => (<EntryCard entry={entry} key={idx} />)) : <h1>No Entry For This Day</h1>}
+        </MDBTypography>
       </div>
-
     </>
   );
 }

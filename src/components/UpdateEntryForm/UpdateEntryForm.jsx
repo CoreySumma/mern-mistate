@@ -26,6 +26,7 @@ export default function UpdateEntryForm({ entries, handleUpdateEntry }) {
       <MDBCard>
         <h1>Second thoughts?</h1>
         <form onSubmit={handleSubmit}>
+          <label>Updated Entry:</label>
           <MDBTextArea
             name="text"
             type="text"

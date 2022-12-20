@@ -5,9 +5,9 @@ import { MDBTextArea, MDBCard } from 'mdb-react-ui-kit';
 export default function NewEntryForm({ addEntry }) {
   const navigate = useNavigate();
   const [entryContent, setEntryContent] = useState({
-    title: "Name Your Entry",
-    text: "What Happened?",
-    emotion: "Select One",
+    title: "",
+    text: "",
+    emotion: "",
     day: ""
   })
 
@@ -42,7 +42,7 @@ export default function NewEntryForm({ addEntry }) {
             pattern=".{1,}"
           />
 
-          <label>Content:</label>
+          <label>Entry For Today:</label>
           <MDBTextArea
             columns={40}
             rows={6}
@@ -61,6 +61,7 @@ export default function NewEntryForm({ addEntry }) {
             onChange={handleChange}
             required
           >
+            <option value="">Select One</option>
             <option value="😁">Feelin' Tip Top </option>
             <option value="😐">Bleh </option>
             <option value="🙁">Sad </option>
