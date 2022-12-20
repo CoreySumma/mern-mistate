@@ -13,7 +13,7 @@ export default function EntryCard({ entry }) {
   }
 
   return (
-      <Link to= {`/entries/${entry.title}`}>
+      <Link to= {`/entries/${entry._id}`}>
     <div>
       <p>{entry.emotion}{entry.title}</p>
     </div>
