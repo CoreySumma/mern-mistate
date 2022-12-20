@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { MDBTextArea, MDBCard } from 'mdb-react-ui-kit';
+import "./NewEntryForm.css";
 
 export default function NewEntryForm({ addEntry }) {
   const navigate = useNavigate();
@@ -67,7 +68,7 @@ export default function NewEntryForm({ addEntry }) {
             <option value="🙁">Sad </option>
             <option value="😭">Drying My Tears </option>
           </select>
-          <button type="submit">LOG MY STATE</button>
+            <button type="submit">LOG MY STATE</button>
         </form>
       </MDBCard>
     </>

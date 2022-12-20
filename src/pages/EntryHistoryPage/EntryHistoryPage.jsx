@@ -33,10 +33,6 @@ export default function EntryHistoryPage({ entries, handleDeleteAll }) {
     sortEntries();
   }, [entries])
 
-
-
-
-
   return (
     <>
       <h1>Your Week So Far...</h1>
@@ -44,7 +40,8 @@ export default function EntryHistoryPage({ entries, handleDeleteAll }) {
       <div>
         <img src="/assets/stocks.png" />
         <br />
-        <button onClick={handleDeleteAll()}>Let's start fresh!</button>
+        <button onClick={handleDeleteAll}>Let's start fresh!</button>
+         <p>(This button WILL delete all entries.)</p>
         <hr />
         <MDBTypography tag='div' className='display-5 pb-3 mb-3 border-bottom'>
           <h1>Monday</h1>
