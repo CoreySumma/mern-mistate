@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import * as usersService from '../../utilities/users-service';
-import { useNavigate } from 'react-router-dom';
 
 export default function LoginForm({ setUser }) {
   const [credentials, setCredentials] = useState({
@@ -9,7 +8,6 @@ export default function LoginForm({ setUser }) {
   });
   
   const [error, setError] = useState('');
-  const navigate = useNavigate;
 
   function handleChange(evt) {
     setCredentials({ ...credentials, [evt.target.name]: evt.target.value });
@@ -34,10 +32,10 @@ export default function LoginForm({ setUser }) {
     <div>
       <div className="form-container">
         <form autoComplete="off" onSubmit={handleSubmit}>
-          <label>Email</label>
-          <input type="text" name="email" value={credentials.email} onChange={handleChange} required />
-          <label>Password</label>
-          <input type="password" name="password" value={credentials.password} onChange={handleChange} required />
+          <label style={{ fontSize: '25px' }}>Email</label>
+          <input style={{ fontSize: '25px' }} type="text" name="email" value={credentials.email} onChange={handleChange} required />
+          <label style={{ fontSize: '25px' }}>Password</label>
+          <input style={{ fontSize: '25px' }} type="password" name="password" value={credentials.password} onChange={handleChange} required />
           <button type="submit">LOG IN</button>
         </form>
       </div>

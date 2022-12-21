@@ -9,7 +9,6 @@ export default function NewEntryForm({ addEntry }) {
     title: "",
     text: "",
     emotion: "",
-    day: ""
   })
 
   function handleSubmit(evt) {
@@ -19,7 +18,6 @@ export default function NewEntryForm({ addEntry }) {
       title: "",
       text: "",
       emotion: "",
-      day: ""
     })
     navigate('/entries')
   }
@@ -32,7 +30,7 @@ export default function NewEntryForm({ addEntry }) {
     <>
       <MDBCard>
         <form onSubmit={handleSubmit}>
-          <label>Title:</label>
+          <label style={{ fontSize: '25px' }}>Title:</label>
           <input
             style={{ fontSize: '25px' }}
             name="title"
@@ -44,7 +42,7 @@ export default function NewEntryForm({ addEntry }) {
             pattern=".{1,}"
           />
 
-          <label>Entry For Today:</label>
+          <label style={{ fontSize: '25px' }}>Entry For Today:</label>
           <MDBTextArea
             style={{ fontSize: '25px' }}
             columns={40}
@@ -58,18 +56,18 @@ export default function NewEntryForm({ addEntry }) {
             pattern=".{1,}"
           />
 
-          <label>Emotion:</label>
+          <label style={{ fontSize: '25px' }}>Emotion:</label>
           <select name="emotion"
             value={entryContent.emotion}
             onChange={handleChange}
             required
           >
-            <option value="">Select One</option>
-            <option value="😁">Feelin' Tip Top </option>
-            <option value="😊">Good </option>
-            <option value="😐">Bleh </option>
-            <option value="🙁">Sad </option>
-            <option value="😭">Drying My Tears </option>
+            <option style={{ fontSize: '25px' }} value="">Select One</option>
+            <option style={{ fontSize: '25px' }} value="😁">Feelin' Tip Top </option>
+            <option style={{ fontSize: '25px' }} value="😊">Good </option>
+            <option style={{ fontSize: '25px' }} value="😐">Bleh </option>
+            <option style={{ fontSize: '25px' }} value="🙁">Sad </option>
+            <option style={{ fontSize: '25px' }} value="😭">Drying My Tears </option>
           </select>
           <button type="submit">LOG MY STATE</button>
         </form>
