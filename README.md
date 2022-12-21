@@ -50,9 +50,10 @@
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 <br>
 
+ #### [Project planning and wireframing](https://trello.com/b/ParGbIjE/project-3)
+
 ## Getting Started
 
- #### [Project planning and wireframing](https://trello.com/b/ParGbIjE/project-3)
 
  1.) Create an account to enjoy the app's functionality.<br>
  2.) Create your first entry to start logging and tracking your days!<br>
