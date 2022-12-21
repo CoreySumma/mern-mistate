@@ -2,6 +2,7 @@ import EntryCard from "../../components/EntryCard/EntryCard"
 import { useState, useEffect } from "react";
 import { MDBTypography } from 'mdb-react-ui-kit';
 
+
 export default function EntryHistoryPage({ entries, handleDeleteAll }) {
 
 
@@ -38,7 +39,7 @@ export default function EntryHistoryPage({ entries, handleDeleteAll }) {
       <h1>Your Week So Far...</h1>
       <p>(You can choose to delete old entries, OR keep them as a reference for trends.)</p>
       <div>
-        <img src="/assets/stocks.png" />
+        <img className="imgClass" src="/assets/stocks.png" />
         <br />
         <button onClick= {() =>handleDeleteAll(entries)}>Let's start fresh!</button>
          <p>(This button WILL delete all entries.)</p>

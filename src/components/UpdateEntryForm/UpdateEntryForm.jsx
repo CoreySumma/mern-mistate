@@ -22,20 +22,22 @@ export default function UpdateEntryForm({ entries, handleUpdateEntry }) {
   }
 
   return (
-    <>
-      <MDBCard>
-        <h1>Second thoughts?</h1>
-        <form onSubmit={handleSubmit}>
-          <label>Updated Entry:</label>
-          <MDBTextArea
-            name="text"
-            type="text"
-            rows={4}
-            value={formData.text}
-            onChange={handleChange} />
-          <button type="submit">Save My Changes</button>
-        </form>
-      </MDBCard>
-    </>
+    <div>
+      {formData && entries && id && updateEntry && <>
+        <MDBCard>
+          <h1>Second thoughts?</h1>
+          <form onSubmit={handleSubmit}>
+            <label>Updated Entry:</label>
+            <MDBTextArea
+              name="text"
+              type="text"
+              rows={4}
+              value={formData.text}
+              onChange={handleChange} />
+            <button type="submit">Save My Changes</button>
+          </form>
+        </MDBCard>
+      </>}
+    </div>
   )
 }

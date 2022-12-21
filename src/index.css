@@ -162,3 +162,15 @@ button[type="submit"] {
   grid-column: span 2;
   margin: 1vmin 0 0;
 }
+
+.imgClass {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+@media (max-width: 480px) {
+  .imgClass {
+   width: 50%
+  }
+}
