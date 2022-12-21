@@ -16,7 +16,7 @@ export default function AuthPage({ setUser }) {
         :
         <LoginForm setUser={setUser} />
       }
-      <img src="/assets/login.png" />
+      <img className='imgClass' src="/assets/login.png" />
     </main>
   );
 }
