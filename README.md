@@ -9,7 +9,7 @@
   ## Description:
 
 
-  MiState is an app that encourages mindfulness and utilizes full MERN infrastructures to not only log the emotional state of the user.  But also, dynamically organizing and rendering entries in an easy to read format. Each user has the opportunity to look back at logs to see progress/trends!  Your state is tracked on the front end, while on the back end we track the state of the app using REACT.
+  MiState is an app that encourages mindfulness and utilizes full MERN infrastructures to not only log the emotional state of the user but, also dynamically organize and render entries in an easy to read format. Each user has the opportunity to look back at logs to see progress/trends!  Your state is tracked on the front end, while on the back end we track the state of the app using the full MERN stack.
 
 
    ## Screenshots:
@@ -54,9 +54,9 @@
 
  #### [Project planning and wireframing](https://trello.com/b/ParGbIjE/project-3)
 
- 1.) Create an account to enjoy the app's functionality.
- 2.) Create your first entry to start logging and tracking your days!
- 3.) Look back, store, or start each week fresh 
+ 1.) Create an account to enjoy the app's functionality.<br>
+ 2.) Create your first entry to start logging and tracking your days!<br>
+ 3.) Look back, store, or start each week fresh<br>
  4.) Enjoy your own personal journal!
 
 
