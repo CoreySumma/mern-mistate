@@ -7,11 +7,11 @@ import HomePage from '../HomePage/HomePage';
 import NewEntryPage from '../NewEntryPage/NewEntryPage';
 import EntryHistoryPage from '../EntryHistoryPage/EntryHistoryPage';
 import NavBar from '../../components/NavBar/NavBar';
-import EntryDetailPage from '../EntryDetail/EntryDetailPage';
+import EntryDetailPage from '../EntryDetailPage/EntryDetailPage';
 import { useEffect } from 'react';
 import * as entryAPI from '../../utilities/entries-api'
 import { useNavigate } from 'react-router-dom';
-import UpdateNotePage from '../../components/UpdateEntryForm/UpdateEntryForm';
+import UpdateEntryForm from '../../components/UpdateEntryForm/UpdateEntryForm';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -63,7 +63,7 @@ export default function App() {
             <Route exact path="/entries" element={<EntryHistoryPage user={user} setEntries={setEntries} entries={entries} handleDeleteAll={handleDeleteAll}/>} />
             <Route path="/entries/:id" element={<EntryDetailPage user={user} entries={entries} handleDelete={handleDelete} handleUpdateEntry={handleUpdateEntry} />} />
             <Route path="/entries/new" element={<NewEntryPage addEntry={addEntry} user={user} />} />
-            <Route path="/entries/:id/update" element={<UpdateNotePage handleUpdateEntry={handleUpdateEntry} entries={entries} user={user} />} />
+            <Route path="/entries/:id/update" element={<UpdateEntryForm handleUpdateEntry={handleUpdateEntry} entries={entries} user={user} />} />
           </Routes>
         </>
         :

@@ -1,14 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { MDBTextArea, MDBCard } from 'mdb-react-ui-kit';
 
-export default function UpdateEntryForm({ entries, handleUpdateEntry }) {
+export default function UpdateEntryForm({ entries, handleUpdateEntry, user}) {
   const { id } = useParams();
   const navigate = useNavigate();
   const updateEntry = entries.find(entry => entry._id === id);
+
+  
   const [formData, setFormData] = useState(updateEntry);
-  if (!updateEntry) return null;
+  
+  console.log(formData);
+  console.log(updateEntry)
 
   function handleChange(evt) {
     const updatedEntryForm = { ...updateEntry, [evt.target.name]: evt.target.value }
@@ -21,9 +25,16 @@ export default function UpdateEntryForm({ entries, handleUpdateEntry }) {
     navigate('/entries')
   }
 
+  useEffect(() => {
+    function setEntry() {
+      setFormData(updateEntry);
+    }
+    setEntry();
+  }, [updateEntry])
+
   return (
     <div>
-      {formData && entries && id && updateEntry && <>
+     {formData && <>
         <MDBCard>
           <h1>Second thoughts?</h1>
           <form onSubmit={handleSubmit}>
