@@ -1,14 +1,16 @@
-<div id="description" align="center">
+<div align="center">
 
   # <u>MiState</u>
 
   ### [Start your Journey in self reflection](http://codemonk-wars.herokuapp.com/)
 
+</div>
+
   ## Description:
+
 
   MiState is an app that encourages mindfulness and utilizes full MERN infrastructures to not only log the emotional state of the user.  By dynamically organizing and rendering entries in an easy to read format, each user has the opportunity to look back at logs to see progress/trends!  Your state is tracked on the front end, while on the back end we track the state of the app using REACT.
 
-</div>
 
    ## Screenshots:
 <h3 align="center">Auth Page</h3>
