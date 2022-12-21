@@ -40,6 +40,7 @@ export default function UpdateEntryForm({ entries, handleUpdateEntry, user}) {
           <form onSubmit={handleSubmit}>
             <label>Updated Entry:</label>
             <MDBTextArea
+              style={{ fontSize: '25px' }}
               name="text"
               type="text"
               rows={4}

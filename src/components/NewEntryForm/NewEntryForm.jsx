@@ -34,6 +34,7 @@ export default function NewEntryForm({ addEntry }) {
         <form onSubmit={handleSubmit}>
           <label>Title:</label>
           <input
+            style={{ fontSize: '25px' }}
             name="title"
             value={entryContent.title}
             type="text"
@@ -45,6 +46,7 @@ export default function NewEntryForm({ addEntry }) {
 
           <label>Entry For Today:</label>
           <MDBTextArea
+            style={{ fontSize: '25px' }}
             columns={40}
             rows={6}
             name="text"
@@ -64,11 +66,12 @@ export default function NewEntryForm({ addEntry }) {
           >
             <option value="">Select One</option>
             <option value="😁">Feelin' Tip Top </option>
+            <option value="😊">Good </option>
             <option value="😐">Bleh </option>
             <option value="🙁">Sad </option>
             <option value="😭">Drying My Tears </option>
           </select>
-            <button type="submit">LOG MY STATE</button>
+          <button type="submit">LOG MY STATE</button>
         </form>
       </MDBCard>
     </>
