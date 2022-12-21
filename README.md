@@ -48,16 +48,16 @@
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 <br>
 
-## :spiral_notepad: Getting Started
+## Getting Started
 
  #### [Project planning and wireframing](https://trello.com/b/ParGbIjE/project-3)
 
- * Create an account to enjoy the app's functionality.
- * Create your first entry to start logging and tracking your days!
- * Look back, store, or start each week fresh 
- * Enjoy your own personal journal!
+ 1.) Create an account to enjoy the app's functionality.
+ 2.) Create your first entry to start logging and tracking your days!
+ 3.) Look back, store, or start each week fresh 
+ 4.) Enjoy your own personal journal!
 
 
-## :ice_cube: Icebox Features :ice_cube:
+## Icebox Features:
 * Add a feature to dynamically render a graph showing trends users state.
 * Impliment geo location to access an average mood rating of other users logging THEIR state
