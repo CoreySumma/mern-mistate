@@ -52,7 +52,7 @@
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 <br>
 
- #### [Project planning and wireframing](https://trello.com/b/ParGbIjE/project-3)
+ #### [Project planning and wireframing](https://trello.com/b/SQeiqakO/mistate)
 
 ## Getting Started
 
