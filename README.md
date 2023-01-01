@@ -21,12 +21,13 @@
     width="800" height="400"
      </h3>
 /><br>
-<h3 align="center">Homepage</h3>
+<h3 align="center">Homepage
 <img
   src="public/assets/HomePage.png"
   width="800" height="400"
+     </h3>
 /><br>
-<h3 align="center">My Week</h3>
+<h3 align="center">My Week
 <img
   src="public/assets/MiState Graph.png"
   width="800" height="400"
@@ -34,11 +35,13 @@
 <img
   src="public/assets/MyWeek2.png"
   width="800" height="400"
+     </h3>
 /><br>
-<h3 align="center">New Entry</h3>
+<h3 align="center">New Entry
 <img
   src="public/assets/New Entry.png"
   width="800" height="400"
+     </h3>
 />
 
 ## :computer: Technologies Used
