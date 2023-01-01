@@ -15,34 +15,36 @@
 
    
   ## Screenshots:
-<h3 align="center">Auth Page
+<h3 align="center">Auth Page</h3>
+<div align="center">
 <img 
     src="public/assets/AuthPage.png"
     width="800" height="400"
-     </h3>
 /><br>
-<h3 align="center">Homepage
-<img
+<h3 align="center">Homepage </h3>
+<img 
   src="public/assets/HomePage.png"
   width="800" height="400"
-     </h3>
-/><br>
-<h3 align="center">My Week
+/>
+<br>
+<h3 align="center">My Week </h3>
 <img
   src="public/assets/MiState Graph.png"
   width="800" height="400"
-/><br>
+/>
+<br>
+  <br>
 <img
   src="public/assets/MyWeek2.png"
   width="800" height="400"
-     </h3>
-/><br>
-<h3 align="center">New Entry
+/>
+<br>
+<h3 align="center">New Entry </h3>
 <img
   src="public/assets/New Entry.png"
   width="800" height="400"
-     </h3>
-/>
+ />
+  </div>
 
 ## :computer: Technologies Used
 ![Trello](https://img.shields.io/badge/Trello-%23026AA7.svg?style=for-the-badge&logo=Trello&logoColor=white)
