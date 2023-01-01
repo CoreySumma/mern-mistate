@@ -16,7 +16,7 @@
    
   ## Screenshots:
 <h3 align="center">Auth Page</h3>
-<img align="center"
+<img width="1440"
     src="public/assets/AuthPage.png"
     width="800" height="400"
 /><br>
