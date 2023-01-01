@@ -15,10 +15,11 @@
 
    
   ## Screenshots:
-<h3 align="center">Auth Page</h3>
-<img width="1440"
+<h3 align="center">Auth Page
+<img 
     src="public/assets/AuthPage.png"
     width="800" height="400"
+     </h3>
 /><br>
 <h3 align="center">Homepage</h3>
 <img
