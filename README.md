@@ -10,7 +10,7 @@
   ## Description:
 
 
-  MiState is an app that encourages mindfulness and utilizes full MERN infrastructures to not only log the emotional state of the user but, also dynamically organize and render entries in an easy to read format. Each user has the opportunity to look back at logs to see progress/trends!  Your state is tracked on the front end, while on the back end we track the state of the app using the full MERN stack.
+  MiState is an app that encourages mindfulness and utilizes full MERN infrastructures to not only log the emotional state of the user but, also dynamically organize and render entries in an easy to read format. Each user has the opportunity to look back at logs to see progress/trends!  Your state is tracked on the front end, while on the back end we track the state of the app using the full MERN stack.  Minimalist design, fully functional.
 
 
    
