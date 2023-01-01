@@ -64,6 +64,6 @@
 
 
 ## Icebox Features:
-* Add a feature to dynamically render a graph showing trends users state.
+* Add a feature to dynamically render a graph showing trends in the users emotional state.
 * Impliment geo location to access an average mood rating of other users logging THEIR state.
 * Add a feature to upload photos to remember the entries milestone with clarity.
