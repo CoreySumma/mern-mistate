@@ -11,6 +11,5 @@ router.put('/:id/update', entryCtrl.updateEntry);
 router.delete('/:id', ensureLoggedIn, entryCtrl.delete);
 router.delete('/', ensureLoggedIn, entryCtrl.deleteAll);
 
-
 module.exports = router;
 

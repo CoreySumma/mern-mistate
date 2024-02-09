@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { MDBTextArea, MDBCard } from 'mdb-react-ui-kit';
+import { MDBTextArea, MDBCard } from "mdb-react-ui-kit";
 import "./NewEntryForm.css";
 
 export default function NewEntryForm({ addEntry }) {
@@ -9,7 +9,7 @@ export default function NewEntryForm({ addEntry }) {
     title: "",
     text: "",
     emotion: "",
-  })
+  });
 
   function handleSubmit(evt) {
     evt.preventDefault();
@@ -18,8 +18,8 @@ export default function NewEntryForm({ addEntry }) {
       title: "",
       text: "",
       emotion: "",
-    })
-    navigate('/entries')
+    });
+    navigate("/entries");
   }
 
   function handleChange(evt) {
@@ -30,9 +30,9 @@ export default function NewEntryForm({ addEntry }) {
     <>
       <MDBCard>
         <form onSubmit={handleSubmit}>
-          <label style={{ fontSize: '25px' }}>Title:</label>
+          <label style={{ fontSize: "25px" }}>Title:</label>
           <input
-            style={{ fontSize: '25px' }}
+            style={{ fontSize: "25px" }}
             name="title"
             value={entryContent.title}
             type="text"
@@ -42,9 +42,9 @@ export default function NewEntryForm({ addEntry }) {
             pattern=".{1,}"
           />
 
-          <label style={{ fontSize: '25px' }}>Entry For Today:</label>
+          <label style={{ fontSize: "25px" }}>Entry For Today:</label>
           <MDBTextArea
-            style={{ fontSize: '25px' }}
+            style={{ fontSize: "25px" }}
             columns={40}
             rows={6}
             name="text"
@@ -56,23 +56,35 @@ export default function NewEntryForm({ addEntry }) {
             pattern=".{1,}"
           />
 
-          <label style={{ fontSize: '25px' }}>Emotion:</label>
-          <select name="emotion"
+          <label style={{ fontSize: "25px" }}>Emotion:</label>
+          <select
+            name="emotion"
             value={entryContent.emotion}
             onChange={handleChange}
             required
           >
-            <option style={{ fontSize: '25px' }} value="">Select One</option>
-            <option style={{ fontSize: '25px' }} value="😁">Feelin' Tip Top </option>
-            <option style={{ fontSize: '25px' }} value="😊">Good </option>
-            <option style={{ fontSize: '25px' }} value="😐">Bleh </option>
-            <option style={{ fontSize: '25px' }} value="🙁">Sad </option>
-            <option style={{ fontSize: '25px' }} value="😭">Drying My Tears </option>
+            <option style={{ fontSize: "25px" }} value="">
+              Select One
+            </option>
+            <option style={{ fontSize: "25px" }} value="😁">
+              Feelin' Tip Top{" "}
+            </option>
+            <option style={{ fontSize: "25px" }} value="😊">
+              Good{" "}
+            </option>
+            <option style={{ fontSize: "25px" }} value="😐">
+              Bleh{" "}
+            </option>
+            <option style={{ fontSize: "25px" }} value="🙁">
+              Sad{" "}
+            </option>
+            <option style={{ fontSize: "25px" }} value="😭">
+              Drying My Tears{" "}
+            </option>
           </select>
           <button type="submit">LOG MY STATE</button>
         </form>
       </MDBCard>
     </>
-  )
+  );
 }
-

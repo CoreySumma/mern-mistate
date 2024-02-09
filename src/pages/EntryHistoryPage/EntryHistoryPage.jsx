@@ -1,10 +1,11 @@
 import EntryCard from "../../components/EntryCard/EntryCard"
 import { useState, useEffect } from "react";
 import { MDBTypography } from 'mdb-react-ui-kit';
+import averageEmotion from '../../utilities/average-emotion'
+import convertToEmoji from "../../utilities/num-convert-emotion";
 
 
 export default function EntryHistoryPage({ entries, handleDeleteAll }) {
-
 
   const [monday, setMonday] = useState([]);
   const [tuesday, setTuesday] = useState([]);
@@ -14,8 +15,12 @@ export default function EntryHistoryPage({ entries, handleDeleteAll }) {
   const [saturday, setSaturday] = useState([]);
   const [sunday, setSunday] = useState([]);
 
+  const [updatedAverageEmotion, setUpdatedAverageEmotion] = useState([]);
+
+  // Sort and average the entries
   useEffect(() => {
-    function sortEntries() {
+    function sortAndAverageEntries() {
+      setUpdatedAverageEmotion(convertToEmoji(averageEmotion(entries)));
       for (let i = 0; i < 7; i++) {
         const sortedEntries = entries.filter(function (entry) {
           const date = new Date(entry.createdAt);
@@ -31,7 +36,7 @@ export default function EntryHistoryPage({ entries, handleDeleteAll }) {
         if (i === 6) setSaturday(sortedEntries);
       }
     }
-    sortEntries();
+    sortAndAverageEntries();
   }, [entries])
 
   return (
@@ -41,6 +46,7 @@ export default function EntryHistoryPage({ entries, handleDeleteAll }) {
       <div>
         <img className="imgClass" src="/assets/stocks.png" />
         <br />
+        <h3>Total Average: {updatedAverageEmotion}</h3>
         <button onClick= {() =>handleDeleteAll(entries)}>Let's start fresh!</button>
          <p>(This button WILL delete all entries.)</p>
         <hr />
