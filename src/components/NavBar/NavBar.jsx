@@ -49,7 +49,7 @@ export default function NavBar({ user, setUser }) {
               <MDBNavbarLink href="/entries">| My Week |</MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink href="">| Everyone Else's Week |</MDBNavbarLink>
+              <MDBNavbarLink href="/everyone">| Everyone Else's Week |</MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
               <MDBNavbarLink href="" onClick={handleLogOut}>
