@@ -10,12 +10,13 @@ export default function EntryDetailPage({ entries, handleDelete }) {
   return (
     <div>
       {entry && <>
-        <MDBTypography tag='div' className='display-5 pb-3 mb-3 border-bottom'>
-          <div>{new Date(entry.updatedAt).toLocaleDateString()}</div>
-          <div>{entry.title}</div>
+        <MDBTypography tag='div' className='display-6 pb-3 mb-3 border-bottom'>
+          {/* <div>{entry.emotion}</div> */}
+          <div><u>{entry.title}</u></div>
           <img className="imgClass" src="/assets/notebook.png" />
+          <div>{new Date(entry.updatedAt).toLocaleDateString()}</div>
         </MDBTypography>
-        <MDBTypography tag='div' className='display-5 pb-3 mb-3 border-bottom'>
+        <MDBTypography tag='div' className='display-6 pb-3 mb-3 border-bottom'>
           <div>{entry.text}</div>
         </MDBTypography>
         <button onClick={() => navigate(`/entries/${entry._id}/update`)}>Edit This Entry</button>

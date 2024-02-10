@@ -4,6 +4,7 @@ import { getUser } from '../../utilities/users-service';
 import './App.css';
 import AuthPage from '../AuthPage/AuthPage';
 import HomePage from '../HomePage/HomePage';
+import LocationBasedStats from '../LocationBasedStats/LocationBasedStats';
 import NewEntryPage from '../NewEntryPage/NewEntryPage';
 import EntryHistoryPage from '../EntryHistoryPage/EntryHistoryPage';
 import NavBar from '../../components/NavBar/NavBar';
@@ -61,6 +62,7 @@ export default function App() {
             {/* Route components in here */}
             <Route path="/" element={<HomePage user={user} />} />
             <Route exact path="/entries" element={<EntryHistoryPage user={user} setEntries={setEntries} entries={entries} handleDeleteAll={handleDeleteAll}/>} />
+            <Route exact path="/everyone" element={<LocationBasedStats/>} />
             <Route path="/entries/:id" element={<EntryDetailPage user={user} entries={entries} handleDelete={handleDelete} handleUpdateEntry={handleUpdateEntry} />} />
             <Route path="/entries/new" element={<NewEntryPage addEntry={addEntry} user={user} />} />
             <Route path="/entries/:id/update" element={<UpdateEntryForm handleUpdateEntry={handleUpdateEntry} entries={entries} user={user} />} />
