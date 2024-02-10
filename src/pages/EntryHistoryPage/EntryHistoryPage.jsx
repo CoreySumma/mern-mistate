@@ -34,6 +34,7 @@ export default function EntryHistoryPage({ entries, handleDeleteAll }) {
   useEffect(() => {
     function sortAndAverageEntries() {
       setUpdatedAverageEmotion(convertToEmoji(averageEmotion(entries)));
+      console.log(entries);
       for (let i = 0; i < 7; i++) {
         const sortedEntries = entries.filter(function (entry) {
           const date = new Date(entry.createdAt);
