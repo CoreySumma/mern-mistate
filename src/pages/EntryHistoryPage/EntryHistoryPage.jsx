@@ -59,13 +59,12 @@ export default function EntryHistoryPage({ entries, handleDeleteAll }) {
 
   return (
     <>
-      <h1>Your Week So Far...</h1>
+      <h1>Weekly Average {updatedAverageEmotion}</h1>
       <p>(You can choose to delete old entries, OR keep them as a reference for trends.)</p>
       <div>
         {/* <img className="imgClass" src="/assets/stocks.png" /> */}
         <ReChart entries={entries}/>
         <br />
-        <h3>Total Average: {updatedAverageEmotion}</h3>
         <button onClick= {() =>handleDeleteAll(entries)}>Let's start fresh!</button>
          <p>(This button WILL delete all entries.)</p>
         <hr />
