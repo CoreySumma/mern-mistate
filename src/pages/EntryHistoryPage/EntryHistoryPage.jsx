@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { MDBTypography } from 'mdb-react-ui-kit';
 import averageEmotion from '../../utilities/average-emotion'
 import convertToEmoji from "../../utilities/num-convert-emotion";
-
+import ReChart from "../../components/ReChart/ReChart";
 
 export default function EntryHistoryPage({ entries, handleDeleteAll }) {
 
@@ -31,6 +31,7 @@ export default function EntryHistoryPage({ entries, handleDeleteAll }) {
   useEffect(() => {
     function sortAndAverageEntries() {
       setUpdatedAverageEmotion(convertToEmoji(averageEmotion(entries)));
+      console.log(entries);
       for (let i = 0; i < 7; i++) {
         const sortedEntries = entries.filter(function (entry) {
           const date = new Date(entry.createdAt);
@@ -61,7 +62,8 @@ export default function EntryHistoryPage({ entries, handleDeleteAll }) {
       <h1>Your Week So Far...</h1>
       <p>(You can choose to delete old entries, OR keep them as a reference for trends.)</p>
       <div>
-        <img className="imgClass" src="/assets/stocks.png" />
+        {/* <img className="imgClass" src="/assets/stocks.png" /> */}
+        <ReChart entries={entries}/>
         <br />
         <h3>Total Average: {updatedAverageEmotion}</h3>
         <button onClick= {() =>handleDeleteAll(entries)}>Let's start fresh!</button>
