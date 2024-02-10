@@ -1,6 +1,6 @@
-import * as userService from '../../utilities/users-service';
+import * as userService from "../../utilities/users-service";
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   MDBNavbar,
   MDBContainer,
@@ -10,8 +10,8 @@ import {
   MDBNavbarLink,
   MDBNavbarToggler,
   MDBNavbarBrand,
-  MDBCollapse
-} from 'mdb-react-ui-kit';
+  MDBCollapse,
+} from "mdb-react-ui-kit";
 
 export default function NavBar({ user, setUser }) {
   const [showNavColorSecond, setShowNavColorSecond] = useState(false);
@@ -22,34 +22,39 @@ export default function NavBar({ user, setUser }) {
   }
 
   return (
-    <MDBNavbar expand='lg' dark bgColor='dark'>
+    <MDBNavbar expand="lg" dark bgColor="dark">
       <MDBContainer fluid>
         <MDBNavbarBrand>MiState</MDBNavbarBrand>
         <MDBNavbarToggler
-          type='button'
-          data-target='#navbarColor02'
-          aria-controls='navbarColor02'
-          aria-expanded='false'
-          aria-label='Toggle navigation'
+          type="button"
+          data-target="#navbarColor02"
+          aria-controls="navbarColor02"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
           onClick={() => setShowNavColorSecond(!showNavColorSecond)}
         >
-          <MDBIcon icon='bars' fas />
+          <MDBIcon icon="bars" fas />
         </MDBNavbarToggler>
-        <MDBCollapse show={showNavColorSecond} navbar id='navbarColor02'>
-          <MDBNavbarNav className='me-auto mb-2 mb-lg-0'>
-            <MDBNavbarItem className='active'>
-              <MDBNavbarLink aria-current='page' href='/'>
-                Home
+        <MDBCollapse show={showNavColorSecond} navbar id="navbarColor02">
+          <MDBNavbarNav className="me-auto mb-2 mb-lg-0">
+            <MDBNavbarItem className="active">
+              <MDBNavbarLink aria-current="page" href="/">
+                | Home |
               </MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink href="/entries">My Week</MDBNavbarLink>
+              <MDBNavbarLink href="/entries/new">| New Entry |</MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink href="/entries/new">New Entry</MDBNavbarLink>
+              <MDBNavbarLink href="/entries">| My Week |</MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink href='' onClick={handleLogOut}>Log Me Out</MDBNavbarLink>
+              <MDBNavbarLink href="">| Everyone Else's Week |</MDBNavbarLink>
+            </MDBNavbarItem>
+            <MDBNavbarItem>
+              <MDBNavbarLink href="" onClick={handleLogOut}>
+                | Log Out |
+              </MDBNavbarLink>
             </MDBNavbarItem>
           </MDBNavbarNav>
         </MDBCollapse>
@@ -58,22 +63,11 @@ export default function NavBar({ user, setUser }) {
   );
 }
 
-
-
-
-
-
-
-
-
-
-
-
-  //   <nav className="navbar bg-light">
-  //   <Link to="/entries">My Week</Link>
-  //   &nbsp; || &nbsp;
-  //   <Link to="/entries/new">New Entry</Link>
-  //   &nbsp;&nbsp;
-  //   <span>How are you {user.name}?</span>
-  //   &nbsp;&nbsp;<Link to="" onClick={handleLogOut}>Log Out</Link>
-  // </nav>
+//   <nav className="navbar bg-light">
+//   <Link to="/entries">My Week</Link>
+//   &nbsp; || &nbsp;
+//   <Link to="/entries/new">New Entry</Link>
+//   &nbsp;&nbsp;
+//   <span>How are you {user.name}?</span>
+//   &nbsp;&nbsp;<Link to="" onClick={handleLogOut}>Log Out</Link>
+// </nav>
