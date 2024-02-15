@@ -1,6 +1,6 @@
 // The user logs their journal entry for a day and chooses an emoji that
 // represents how they feel.
-// This is a component that imports my utility that switches the emoji to a number (0-5)
+// This is a component that imports my utility function that switches the emoji to a number (0-5)
 // and then calculates the average emotion the user feels based on the day
 // of the week they made an entry.
 // Using Rechart library, I create a line chart that displays the average emotion for each day 
@@ -78,7 +78,7 @@ export default function ReChart({ entries }) {
     data.emotion = data.emotion / data.count;
   });
   return (
-    // Use ReChart to create a line chart with the graphData I made.
+    // Use ReChart to create a line chart with the graphData object I made.
     <ResponsiveContainer width="100%" height={400}>
       <LineChart
         data={graphData}
