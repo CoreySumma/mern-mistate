@@ -1,18 +1,33 @@
+// The user logs their journal entry for a day and chooses an emoji that
+// represents how they feel.
+// This is a component that imports my utility that switches the emoji to a number (0-5)
+// and then calculates the average emotion the user feels based on the day
+// of the week they made an entry.
+// Using Rechart library, I create a line chart that displays the average emotion for each day 
+// of the week.
+
+// Import Line chart from Rechart library
 import {
   LineChart,
   Line,
   XAxis,
-  YAxis,
+  YAxis, 
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
 import React from "react";
+// Import the function to convert the emotion emoji to a number
+// I will use the number to calculate the average emotion 
+// the user feels for each day of the week
 import convertToNumber from "../../utilities/emotion-convert-num";
 
 export default function ReChart({ entries }) {
-  // console.log(entryConvertToNumber)
-  console.log(entries);
+// Create an array of objects with the days of the week and the emotion
+// and the count of entries for each day.
+// This will hold our data for the line chart and be user 
+// to calculate the average emotion of the user for each day they make
+// an entry.
   const graphData = [
     { day: "Sunday", emotion: 0, count: 0 },
     { day: "Monday", emotion: 0, count: 0 },
@@ -22,8 +37,13 @@ export default function ReChart({ entries }) {
     { day: "Friday", emotion: 0, count: 0 },
     { day: "Saturday", emotion: 0, count: 0 },
   ];
+  // If entries exists --> Map through the entries 
   entries?.map((entry) => {
-    // Organize the data into an object with the day of the week and the emotion
+    // I organize the data into our grpahData object I made with the 
+    // day of the week and the emotion.
+    // I add to the count of entries for each day so I can average it later.
+    // This line new Date(entry.createdAt).getDay() returns the day 
+    // of the week - 0 being Sunday, and 6 being Saturday.
     if (new Date(entry.createdAt).getDay() === 0) {
       graphData[0].emotion += convertToNumber(entry.emotion);
       graphData[0].count++;
@@ -46,16 +66,19 @@ export default function ReChart({ entries }) {
       graphData[6].emotion += convertToNumber(entry.emotion);
       graphData[6].count++;
     }
-    console.log(graphData);
     return {
       graphData,
     };
   });
-  // Calculate the average emotion for each day of the week
+  // Calculate the average emotion for each day of the week using
+  // a forEach loop.
   graphData.forEach((data) => {
+    // Get the average emotion for each day of the week by dividing the
+    // total emotion by the count of entries for each day.
     data.emotion = data.emotion / data.count;
   });
   return (
+    // Use ReChart to create a line chart with the graphData I made.
     <ResponsiveContainer width="100%" height={400}>
       <LineChart
         data={graphData}
