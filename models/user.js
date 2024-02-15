@@ -17,9 +17,6 @@ const userSchema = new Schema({
     type: String,
     required: true
   }, 
-  location: {
-    type: String,
-  },
 }, {
   timestamps: true,
   toJSON: {
