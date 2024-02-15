@@ -19,13 +19,13 @@ import {
 import React from "react";
 // Import the function to convert the emotion emoji to a number
 // I will use the number to calculate the average emotion 
-// the user feels for each day of the week
+// the user feels for each day of the week.
 import convertToNumber from "../../utilities/emotion-convert-num";
 
 export default function ReChart({ entries }) {
 // Create an array of objects with the days of the week and the emotion
 // and the count of entries for each day.
-// This will hold our data for the line chart and be user 
+// This will hold our data for the line chart and be used 
 // to calculate the average emotion of the user for each day they make
 // an entry.
   const graphData = [
