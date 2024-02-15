@@ -37,9 +37,9 @@ export default function ReChart({ entries }) {
     { day: "Friday", emotion: 0, count: 0 },
     { day: "Saturday", emotion: 0, count: 0 },
   ];
-  // If entries exists --> Map through the entries 
-  entries?.map((entry) => {
-    // I organize the data into our grpahData object I made with the 
+  // If entries exists --> Loop through the entries 
+  entries?.forEach((entry) => {
+    // I organize the data into our graphData array I made with the 
     // day of the week and the emotion.
     // I add to the count of entries for each day so I can average it later.
     // This line new Date(entry.createdAt).getDay() returns the day 
