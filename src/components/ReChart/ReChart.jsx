@@ -7,7 +7,7 @@ import {
   Line,
   Legend,
   XAxis,
-  YAxis, 
+  YAxis,
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
@@ -111,8 +111,8 @@ export default function ReChart({ entries }) {
             axisLine={{ stroke: "#ccc", strokeWidth: 5 }}
             tickLine={{ stroke: "#ccc", strokeWidth: 5 }}
           />
-          <Tooltip contentStyle={{ fontSize: '1rem' }} />
-          <Legend wrapperStyle={{ fontSize: '2rem' }} />
+          <Tooltip contentStyle={{ fontSize: "1rem" }} />
+          <Legend wrapperStyle={{ fontSize: "2rem" }} />
           <Line
             type="monotone"
             dataKey="emotion"
