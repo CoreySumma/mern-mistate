@@ -27,7 +27,7 @@
 /><br>
 <h3 align="center">My Week</h3>
 <img
-  src="public/assets/MyWeek1.png"
+  src="public/assets/MiState Graph.png"
   width="800" height="400"
 /><br>
 <img
