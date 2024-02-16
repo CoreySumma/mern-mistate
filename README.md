@@ -63,7 +63,8 @@
  4.) Enjoy your own personal journal!
 
 
-## Icebox Features:
-* Add a feature to dynamically render a graph showing trends users state.
-* Impliment geo location to access an average mood rating of other users logging THEIR state.
-* Add a feature to upload photos to remember the entries milestone with clarity.
+
+## Current Feature implementations:
+* Add a feature to dynamically render a graph showing trends in the users emotional state.
+* Impliment geo location to access an average mood rating of other users logging THEIR emotional state.
+* Agrigate all emotional data into a second line chart to diaplay and cross reference with the current user.
