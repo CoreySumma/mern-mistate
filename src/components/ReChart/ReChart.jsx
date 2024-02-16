@@ -62,9 +62,6 @@ export default function ReChart({ entries }) {
       graphData[6].emotion += convertToNumber(entry.emotion);
       graphData[6].count++;
     }
-    return {
-      graphData,
-    };
   });
   // Calculate the average emotion for each day of the week using
   // a forEach loop after the first loop finishes.
