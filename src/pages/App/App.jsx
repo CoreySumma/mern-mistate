@@ -17,6 +17,7 @@ import UpdateEntryForm from '../../components/UpdateEntryForm/UpdateEntryForm';
 export default function App() {
   const [user, setUser] = useState(getUser());
   const [entries, setEntries] = useState([]);
+  const [allUserEntries, setAllUserEntries] = useState([]);
   const navigate = useNavigate();
 
   async function addEntry(entry) {
@@ -48,7 +49,8 @@ export default function App() {
   useEffect(function () {
     async function displayEntries() {
       const entryData = await entryAPI.index();
-      setEntries(entryData);
+      setEntries(entryData.entries);
+      setAllUserEntries(entryData.allEntries);
     }
     if (user) displayEntries();
   }, [user])
@@ -61,8 +63,8 @@ export default function App() {
           <Routes>
             {/* Route components in here */}
             <Route path="/" element={<HomePage user={user} />} />
-            <Route exact path="/entries" element={<EntryHistoryPage user={user} setEntries={setEntries} entries={entries} handleDeleteAll={handleDeleteAll}/>} />
-            <Route exact path="/everyone" element={<LocationBasedStats/>} />
+            <Route path="/entries" element={<EntryHistoryPage user={user} setEntries={setEntries} entries={entries} handleDeleteAll={handleDeleteAll}/>} />
+            <Route path="/everyone" element={<LocationBasedStats entries={entries} allUserEntries={allUserEntries}/>} />
             <Route path="/entries/:id" element={<EntryDetailPage user={user} entries={entries} handleDelete={handleDelete} handleUpdateEntry={handleUpdateEntry} />} />
             <Route path="/entries/new" element={<NewEntryPage addEntry={addEntry} user={user} />} />
             <Route path="/entries/:id/update" element={<UpdateEntryForm handleUpdateEntry={handleUpdateEntry} entries={entries} user={user} />} />

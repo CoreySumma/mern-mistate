@@ -10,7 +10,8 @@ module.exports = {
 
 async function index(req, res) {
   const entries = await Entry.find({ user: req.user._id });
-  res.json(entries)
+  const allEntries = await Entry.find({});
+  res.json({entries, allEntries});
 }
 
 async function updateEntry(req, res, next) {
