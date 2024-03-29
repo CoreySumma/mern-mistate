@@ -70,6 +70,22 @@ export default function ReChart({ entries }) {
     // total emotion(now a totaled number) by the count of entries for each day.
     data.emotion = data.emotion / data.count;
   });
+
+  // Custom function so we can display our emojis on the Y-axis
+  // const CustomYAxisTick = ({ x, y, payload }) => {
+  //   const emoji = convertToEmoji(payload.value); // Convert numerical value to emoji
+  //   return (
+  //     <g transform={`translate(${x},${y})`}>
+  //       <text x={0} y={0} dy={16}>
+  //         {emoji}
+  //       </text>
+  //     </g>
+  //   );
+  // }
+  
+  
+
+
   return (
     // Use ReChart to create a line chart with the graphData object I made.
     <ResponsiveContainer width="100%" height={400}>
@@ -84,11 +100,12 @@ export default function ReChart({ entries }) {
       >
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="day" />
-        <YAxis dataKey="emotion" tickCount={6} ticks={[0, 1, 2, 3, 4, 5]} />
+        <YAxis tickCount={6} ticks={[0, 1, 2, 3, 4, 5]} />
         <Tooltip />
         <Line
           type="monotone"
           dataKey="emotion"
+          name="Emotion"
           stroke="#8884d8"
           activeDot={{ r: 8 }}
         />

@@ -1,6 +1,6 @@
 import * as userService from "../../utilities/users-service";
-
 import React, { useState } from "react";
+import "./NavBar.css";
 import {
   MDBNavbar,
   MDBContainer,
@@ -38,21 +38,44 @@ export default function NavBar({ user, setUser }) {
         <MDBCollapse show={showNavColorSecond} navbar id="navbarColor02">
           <MDBNavbarNav className="me-auto mb-2 mb-lg-0">
             <MDBNavbarItem className="active">
-              <MDBNavbarLink aria-current="page" href="/">
+              <MDBNavbarLink
+                aria-current="page"
+                href="/"
+                className="nav-link-underline-animation"
+              >
                 | Home |
               </MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink href="/entries/new">| New Entry |</MDBNavbarLink>
+              <MDBNavbarLink
+                href="/entries/new"
+                className="nav-link-underline-animation"
+              >
+                | New Entry |
+              </MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink href="/entries">| My Week |</MDBNavbarLink>
+              <MDBNavbarLink
+                href="/entries"
+                className="nav-link-underline-animation"
+              >
+                | My Week |
+              </MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink href="/everyone">| Everyone Else's Week |</MDBNavbarLink>
+              <MDBNavbarLink
+                href="/everyone"
+                className="nav-link-underline-animation"
+              >
+                | Everyone Else's Week |
+              </MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink href="" onClick={handleLogOut}>
+              <MDBNavbarLink
+                href=""
+                className="nav-link-underline-animation"
+                onClick={handleLogOut}
+              >
                 | Log Out |
               </MDBNavbarLink>
             </MDBNavbarItem>

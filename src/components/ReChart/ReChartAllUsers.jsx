@@ -114,12 +114,14 @@ export default function ReChart({ entries, allUserEntries }) {
         <Line
           type="monotone"
           dataKey="userEmotion"
+          name="Your Emotion"
           stroke="#8884d8"
           activeDot={{ r: 8 }}
         />
         <Line
           type="monotone"
           dataKey="allEmotions"
+          name="Other's Emotion"
           stroke="#82ca9d"
           activeDot={{ r: 8 }}
         />

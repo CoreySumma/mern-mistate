@@ -60,7 +60,7 @@ export default function EntryHistoryPage({ entries, handleDeleteAll }) {
   return (
     <>
       <h1>Weekly Average {updatedAverageEmotion}</h1>
-      <p>(You can choose to delete old entries, OR keep them as a reference for trends.)</p>
+      <p>(Emotions are measured on a scale of 0 - 5)</p>
       <div>
         <ReChart entries={entries}/>
         <br />
