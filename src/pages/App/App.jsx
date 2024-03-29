@@ -13,6 +13,7 @@ import { useEffect } from 'react';
 import * as entryAPI from '../../utilities/entries-api'
 import { useNavigate } from 'react-router-dom';
 import UpdateEntryForm from '../../components/UpdateEntryForm/UpdateEntryForm';
+import Footer from '../../components/Footer/Footer';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -69,6 +70,7 @@ export default function App() {
             <Route path="/entries/new" element={<NewEntryPage addEntry={addEntry} user={user} />} />
             <Route path="/entries/:id/update" element={<UpdateEntryForm handleUpdateEntry={handleUpdateEntry} entries={entries} user={user} />} />
           </Routes>
+          <Footer />
         </>
         :
         <AuthPage setUser={setUser} />
