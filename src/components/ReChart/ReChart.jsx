@@ -1,9 +1,3 @@
-// Problem: 
-// The user logs their journal entry for a day and chooses an emoji that
-// represents how they feel. I need this to be a number so the data can be diplayed in a line chart.
-// This is a component that imports my utility function that switches the emoji to a number (0-5)
-// and then calculates the average emotion the user feels based on the day
-// of the week they made an entry, and displays it for the user with the Rechart library.
 
 // Import Line chart from Rechart library
 import {
