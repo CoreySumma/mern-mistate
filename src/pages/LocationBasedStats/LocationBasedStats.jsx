@@ -1,12 +1,7 @@
 import ReChartAllUsers from "../../components/ReChart/ReChartAllUsers";
+import GoogleMapComp from "../../components/GoogleMap/GoogleMap";
 
 export default function locationBasedStats({entries, allUserEntries}) {
-  const userEmotions = entries.map((entry) => entry.emotion);
-  const allEmotions = allUserEntries.map((entry) => entry.emotion);
-
-  console.log(userEmotions, allEmotions);
-
-  console.log(userEmotions, allEmotions);
   return (
     <>
       <div>
@@ -14,6 +9,7 @@ export default function locationBasedStats({entries, allUserEntries}) {
         <p>Emotions are measured on a scale of 0 - 5</p>
       </div>
       <ReChartAllUsers entries={entries} allUserEntries={allUserEntries}/>
+      <GoogleMapComp />
     </>
   );
 }
