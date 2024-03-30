@@ -4,6 +4,7 @@ import { MDBTypography } from 'mdb-react-ui-kit';
 import averageEmotion from '../../utilities/average-emotion'
 import convertToEmoji from "../../utilities/num-convert-emotion";
 import ReChart from "../../components/ReChart/ReChart";
+import './EntryHistoryPage.css';
 
 export default function EntryHistoryPage({ entries, handleDeleteAll }) {
 
