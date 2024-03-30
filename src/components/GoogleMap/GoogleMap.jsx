@@ -1,14 +1,14 @@
 import React from 'react';
-import { GoogleMap, LoadScript, Circle } from '@react-google-maps/api';
+import { GoogleMap, LoadScript, LoadScriptNext, Circle } from '@react-google-maps/api';
 
 const mapContainerStyle = {
   height: "400px",
-  width: "800px"
+  width: "100%"
 };
 
 const center = {
-  lat: -34.397,  // Example latitude, replace with your desired location
-  lng: 150.644   // Example longitude, replace with your desired location
+  lat: 30.26,  // Example latitude, replace with your desired location
+  lng: -97.74  // Example longitude, replace with your desired location
 };
 
 const circleOptions = {
@@ -19,7 +19,7 @@ const circleOptions = {
   fillOpacity: 0.35,
   clickable: false,
   draggable: false,
-  editable: false,
+  editable: true,
   visible: true,
   radius: 3000,  // 3 kilometers
   zIndex: 1

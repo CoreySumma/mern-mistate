@@ -8,7 +8,7 @@ export default function HomePage({user}) {
    <MDBContainer>
 
 <div class="text-center">
-  <h1 class="mb-4">Hi, {user.name}</h1>
+  <h1 class="mb-4">Hi, {user.name}. Welcome to</h1>
   <img className="img-fluid mb-4" src="/assets/mistateLogo.png" alt="Logo" />
 <section class="my-5">
   <h3 class="h3-responsive font-weight-bold text-center my-5">Discover a new path to mindfulness and emotional well-being. Track your emotions, understand your trends, and connect with others on a similar journey.</h3>
