@@ -1,3 +1,12 @@
+/* Adjusting navbar nav for vertical centering */
+.custom-container {
+  height: 100% !important; /* Make sure the nav takes full height of its container */
+  align-items: center !important; /* Center items vertically */
+  padding-bottom: 2px;
+}
+
+
+
 /* Custom Link Styles with Underline Animation */
 .nav-link-underline-animation {
   display: inline-block;

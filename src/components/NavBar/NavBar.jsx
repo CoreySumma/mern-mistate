@@ -70,13 +70,15 @@ export default function NavBar({ user, setUser }) {
                 | Everyone Else's Week |
               </MDBNavbarLink>
             </MDBNavbarItem>
+          </MDBNavbarNav>
+          <MDBNavbarNav className="justify-content-end">
             <MDBNavbarItem>
               <MDBNavbarLink
                 href=""
                 className="nav-link-underline-animation"
                 onClick={handleLogOut}
               >
-                | Log Out |
+                Log Out
               </MDBNavbarLink>
             </MDBNavbarItem>
           </MDBNavbarNav>

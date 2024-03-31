@@ -82,7 +82,9 @@ export default function NewEntryForm({ addEntry }) {
               Drying My Tears{" "}
             </option>
           </select>
+          {/* <div className="button-container"> */}
           <button type="submit">LOG MY STATE</button>
+          {/* </div> */}
         </form>
       </MDBCard>
     </>
