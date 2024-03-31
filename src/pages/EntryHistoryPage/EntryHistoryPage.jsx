@@ -65,8 +65,7 @@ export default function EntryHistoryPage({ entries, handleDeleteAll }) {
       <div>
         <ReChart entries={entries}/>
         <br />
-        <button onClick= {() =>handleDeleteAll(entries)}>Let's start fresh!</button>
-         <p>(This button WILL delete all entries.)</p>
+        <button onClick= {() =>handleDeleteAll(entries)}>Delete All Entries</button>
         <hr />
         <MDBTypography tag='div' className='display-5 pb-3 mb-3 border-bottom'>
           <h1>Monday {mondayAverage}</h1>

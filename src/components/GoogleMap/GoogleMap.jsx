@@ -41,7 +41,7 @@ export default function GoogleMapComp() {
         headerTitle={
           <div className="accordion-header-content">
             <MDBIcon fas icon="map-marker-alt" />
-            &nbsp;Open Map
+            &nbsp;Open Map(currently disabled)
           </div>
         }
       >
