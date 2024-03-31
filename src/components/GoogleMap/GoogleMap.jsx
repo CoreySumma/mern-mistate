@@ -2,7 +2,6 @@ import React from "react";
 import {
   GoogleMap,
   LoadScript,
-  LoadScriptNext,
   Circle,
 } from "@react-google-maps/api";
 import { MDBAccordion, MDBAccordionItem, MDBIcon } from "mdb-react-ui-kit";
