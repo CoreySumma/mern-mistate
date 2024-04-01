@@ -14,6 +14,7 @@ import * as entryAPI from '../../utilities/entries-api'
 import { useNavigate } from 'react-router-dom';
 import UpdateEntryForm from '../../components/UpdateEntryForm/UpdateEntryForm';
 import Footer from '../../components/Footer/Footer';
+import Banner from '../../components/NavBar/Banner';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -60,7 +61,9 @@ export default function App() {
     <main className="App">
       {user ?
         <>
+        <Banner />
           <Navbar user={user} setUser={setUser} />
+          <div className="main-content"></div>
           <Routes>
             {/* Route components in here */}
             <Route path="/" element={<HomePage user={user} />} />

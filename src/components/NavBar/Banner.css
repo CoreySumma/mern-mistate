@@ -1,0 +1,14 @@
+.banner {
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 24px;
+  font-family: Arial, sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}

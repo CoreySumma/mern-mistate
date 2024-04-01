@@ -24,7 +24,7 @@
   border: none !important;
   background-color: turquoise !important;
   cursor: pointer !important;
-  z-index: 2 !important;
+  z-index: 3 !important;
 }
 
 .navbar {
@@ -35,7 +35,7 @@
   background-color: turquoise!important;
   background: linear-gradient(to top, #8e2de2, #4a00e0)!important;
   position: fixed!important;
-  z-index: 1!important;
+  z-index: 2!important;
 }
 
 .navList {

@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+.main-content {
+  padding-top: 60px; /* For banner and navbar and content to work with spacing*/
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

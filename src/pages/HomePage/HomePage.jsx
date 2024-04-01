@@ -6,14 +6,10 @@ export default function HomePage({user}) {
   return (
     <>
    <MDBContainer>
-
-<div className="text-center">
-  <h1 className="mb-4">Hi, {user.name}. Welcome to</h1>
-  <img className="img-fluid mb-4" src="/assets/mistateLogo.png" alt="Logo" />
+  <h1 className='h1-responsive'>Hi, {user.name}. Welcome to MiState.</h1>
 <section className="my-5">
   <h3 className="h3-responsive font-weight-bold text-center my-5">Discover a new path to mindfulness and emotional well-being. Track your emotions, understand your trends, and connect with others on a similar journey.</h3>
 </section>
-</div>
 
 <section className="my-5">
   <h2 className="h2-responsive font-weight-bold text-center my-5"><MDBIcon fas icon="spa" />&nbsp; Stay Mindful of Your Emotions and Track Trends:</h2>
@@ -29,7 +25,6 @@ export default function HomePage({user}) {
   <h2 className="h2-responsive font-weight-bold text-center my-5"><MDBIcon fas icon="users" />&nbsp;Connect and Compare: You're Not Alone:</h2>
   <p className="lead grey-text text-center w-responsive mx-auto mb-5">Find comfort in numbers by comparing your emotional trends with those of other users. Gain insights into how others are feeling and foster a sense of community and shared experience.</p>
 </section>
-
 </MDBContainer>
 
     </>
