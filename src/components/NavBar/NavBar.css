@@ -1,22 +1,88 @@
-/* Adjusting navbar nav for vertical centering */
-.custom-container {
-  height: 100% !important; /* Make sure the nav takes full height of its container */
-  align-items: center !important; /* Center items vertically */
-  padding-bottom: 2px;
+@import url("https://rsms.me/inter/inter.css");
+
+/* html {
+  font-family: "Inter";
+  width: 550px;
+  height: 750px;
+} */
+/* Not a good approach but we need to make sure to override bootstrap library */
+/* I now hate bootstrap. Going fully custom from now on */
+.btn {
+  width: 40px !important;
+  height: 40px !important;
+  left: 5px!important;
+  top: 5px!important;
+  position: fixed!important;
+  border-radius: 50% !important;
+  padding: 0 !important; /* Remove padding to ensure circle shape */
+  display: inline-flex !important; /* Center content, if any */
+  justify-content: center !important;
+  align-items: center !important;
+  text-transform: none !important; /* Reset text transform */
+  font-size: 1rem !important; /* Adjust font size as needed */
+  line-height: 1 !important; /* Reset line height */
+  border: none !important;
+  background-color: turquoise !important;
+  cursor: pointer !important;
+  z-index: 2 !important;
 }
+
+.navbar {
+  width: 250px!important;
+  height: 550px!important;
+  margin: none!important;
+  border-radius: 16px!important;
+  background-color: turquoise!important;
+  background: linear-gradient(to top, #8e2de2, #4a00e0)!important;
+  position: fixed!important;
+  z-index: 1!important;
+}
+
+.navList {
+  padding: 100px 70px 200px 70px!important;
+}
+
+.nav-item {
+  font-size: 20px!important;
+  list-style: none!important;
+  color: white!important;
+  cursor: pointer!important;
+  position: relative!important;
+  padding-top: 10px!important;
+}
+
+a {
+  font-size: 20px!important;
+  list-style: none!important;
+  color: white!important;
+  cursor: pointer!important;
+  position: relative!important;
+}
+
+h4 {
+  margin-block-start: 1px!important;
+  margin-block-end: 1px!important;
+}
+
+.navbar-item-circle {
+  width: 30px!important;
+  height: 30px!important;
+  border-radius: 50%!important;
+  background: linear-gradient(to right, #000428, #004e92)!important;
+}
+
+.navbar-item-rect {
+  width: 30px!important;
+  height: 30px!important;
+}
+
+
 
 
 
 /* Custom Link Styles with Underline Animation */
-.nav-link-underline-animation {
-  display: inline-block;
-  position: relative;
-  color: #FFF; 
-  text-decoration: none;
-  padding-bottom: 1px !important;
-}
 
-.nav-link-underline-animation::after {
+.nav-item::after {
   content: '';
   position: absolute;
   bottom: 0; 
@@ -24,12 +90,15 @@
   transform: translateX(-50%);
   width: 0;
   height: 2px;
-  background-color: grey; 
+  /* background-color: #ff6347;  */
+  background-color: black; 
   transition: width 0.3s ease-in-out;
 }
 
-.nav-link-underline-animation:hover::after {
+.nav-item:hover::after {
   width: 100%;
   left: 0;
   transform: translateX(0%);
+  background-color: #32cd32;
 }
+

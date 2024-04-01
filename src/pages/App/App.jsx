@@ -7,7 +7,7 @@ import HomePage from '../HomePage/HomePage';
 import LocationBasedStats from '../LocationBasedStats/LocationBasedStats';
 import NewEntryPage from '../NewEntryPage/NewEntryPage';
 import EntryHistoryPage from '../EntryHistoryPage/EntryHistoryPage';
-import NavBar from '../../components/NavBar/NavBar';
+import Navbar from '../../components/NavBar/Navbar';
 import EntryDetailPage from '../EntryDetailPage/EntryDetailPage';
 import { useEffect } from 'react';
 import * as entryAPI from '../../utilities/entries-api'
@@ -60,7 +60,7 @@ export default function App() {
     <main className="App">
       {user ?
         <>
-          <NavBar user={user} setUser={setUser} />
+          <Navbar user={user} setUser={setUser} />
           <Routes>
             {/* Route components in here */}
             <Route path="/" element={<HomePage user={user} />} />

@@ -1,0 +1,35 @@
+/* Adjusting navbar nav for vertical centering */
+.custom-container {
+  height: 100% !important; /* Make sure the nav takes full height of its container */
+  align-items: center !important; /* Center items vertically */
+  padding-bottom: 2px;
+}
+
+
+
+/* Custom Link Styles with Underline Animation */
+.nav-link-underline-animation {
+  display: inline-block;
+  position: relative;
+  color: #FFF; 
+  text-decoration: none;
+  padding-bottom: 1px !important;
+}
+
+.nav-link-underline-animation::after {
+  content: '';
+  position: absolute;
+  bottom: 0; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: grey; 
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-link-underline-animation:hover::after {
+  width: 100%;
+  left: 0;
+  transform: translateX(0%);
+}

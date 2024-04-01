@@ -3,7 +3,7 @@ import "./DayCard.css";
 import EntryCard from "../EntryCard/EntryCard";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function DayCard({ day, entries, averageEmotion = '😶' }) {
+export default function DayCard({ day, entries, averageEmotion }) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   // Animation variants for the DayCard
@@ -27,7 +27,7 @@ export default function DayCard({ day, entries, averageEmotion = '😶' }) {
       className="day-card"
       onClick={() => setIsExpanded(!isExpanded)}
     >
-      <motion.h1 className="day-card-title" layout>{day}{' '}{averageEmotion} <hr /></motion.h1>
+      <motion.h1 className="day-card-title" layout>{day}{' '}{!averageEmotion ? '😶' : averageEmotion} <hr /></motion.h1>
       <AnimatePresence>
         {isExpanded && (
           <motion.div
