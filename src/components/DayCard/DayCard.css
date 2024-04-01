@@ -16,3 +16,19 @@
   border-color: #007bff; 
 }
  */
+
+ .day-card-title {
+  cursor: pointer;
+ }
+
+ .empty-link {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  display: inline-block;
+  position: relative;
+  color: #000; 
+  text-decoration: none;
+}
+
+
