@@ -1,1 +1,8 @@
-
+.days-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start; /* Align items at the top */
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 1200px; /* Adjust based on your design preference */
+}

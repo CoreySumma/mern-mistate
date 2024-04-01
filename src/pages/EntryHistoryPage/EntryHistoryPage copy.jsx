@@ -5,7 +5,6 @@ import averageEmotion from '../../utilities/average-emotion'
 import convertToEmoji from "../../utilities/num-convert-emotion";
 import ReChart from "../../components/ReChart/ReChart";
 import './EntryHistoryPage.css';
-import DayCard from "../../components/DayCard/DayCard";
 
 export default function EntryHistoryPage({ entries, handleDeleteAll }) {
 
@@ -68,30 +67,42 @@ export default function EntryHistoryPage({ entries, handleDeleteAll }) {
         <br />
         <button onClick= {() =>handleDeleteAll(entries)}>Delete All Entries</button>
         <hr />
-        {/* <div className="days-container"> */}
-      {monday.length > 0 && 
-        <DayCard day="Monday" entries={monday} averageEmotion={convertToEmoji(averageEmotion(monday))} />}
-        <hr />
-      {tuesday.length > 0 && 
-        <DayCard day="Tuesday" entries={tuesday} averageEmotion={convertToEmoji(averageEmotion(tuesday))} />}
-        <hr />
-      {wednesday.length > 0 && 
-        <DayCard day="Wednesday" entries={wednesday} averageEmotion={convertToEmoji(averageEmotion(wednesday))} />}
-         <hr />
-      {thursday.length > 0 && 
-        <DayCard day="Thursday" entries={thursday} averageEmotion={convertToEmoji(averageEmotion(thursday))} />}
-         <hr />
-      {friday.length > 0 && 
-        <DayCard day="Friday" entries={friday} averageEmotion={convertToEmoji(averageEmotion(friday))} />}
-         <hr />
-      {saturday.length > 0 && 
-        <DayCard day="Saturday" entries={saturday} averageEmotion={convertToEmoji(averageEmotion(saturday))} />}
-         <hr />
-      {sunday.length > 0 && 
-        <DayCard day="Sunday" entries={sunday} averageEmotion={convertToEmoji(averageEmotion(sunday))} />}
-         <hr />
+        <MDBTypography tag='div' className='display-5 pb-3 mb-3 border-bottom'>
+          <h1>Monday {mondayAverage}</h1>
+          <div style={monday.length > 0 ? { border: "1px solid rgb(220, 219, 220)" } : null} />
+          {monday.length > 0 ? monday.map((entry, idx) => (<EntryCard entry={entry} key={idx} />)) : <h1>No Entry For This Day</h1>}
+        </MDBTypography>
+        <MDBTypography tag='div' className='display-5 pb-3 mb-3 border-bottom'>
+          <h1>Tuesday {tuesdayAverage}</h1>
+          <div style={tuesday.length > 0 ? { border: "1px solid rgb(220, 219, 220)" } : null} />
+          {tuesday.length > 0 ? tuesday.map((entry, idx) => (<EntryCard entry={entry} key={idx} />)) : <h1>No Entry For This Day</h1>}
+        </MDBTypography>
+        <MDBTypography tag='div' className='display-5 pb-3 mb-3 border-bottom'>
+          <h1>Wednesday {wednesdayAverage}</h1>
+          <div style={wednesday.length > 0 ? { border: "1px solid rgb(220, 219, 220)" } : null} />
+          {wednesday.length > 0 ? wednesday.map((entry, idx) => (<EntryCard entry={entry} key={idx} />)) : <h1>No Entry For This Day</h1>}
+        </MDBTypography>
+        <MDBTypography tag='div' className='display-5 pb-3 mb-3 border-bottom'>
+          <h1>Thursday {thursdaAverage}</h1>
+          <div style={thursday.length > 0 ? { border: "1px solid rgb(220, 219, 220)" } : null} />
+          {thursday.length > 0 ? thursday.map((entry, idx) => (<EntryCard entry={entry} key={idx} />)) : <h1>No Entry For This Day</h1>}
+        </MDBTypography>
+        <MDBTypography tag='div' className='display-5 pb-3 mb-3 border-bottom'>
+          <h1>Friday {fridayAverage}</h1>
+          <div style={friday.length > 0 ? { border: "1px solid rgb(220, 219, 220)" } : null} />
+          {friday.length > 0 ? friday.map((entry, idx) => (<EntryCard entry={entry} key={idx} />)) : <h1>No Entry For This Day</h1>}
+        </MDBTypography>
+        <MDBTypography tag='div' className='display-5 pb-3 mb-3 border-bottom'>
+          <h1>Saturday {saturdayAverage}</h1>
+          <div style={saturday.length > 0 ? { border: "1px solid rgb(220, 219, 220)" } : null} />
+          {saturday.length > 0 ? saturday.map((entry, idx) => (<EntryCard entry={entry} key={idx} />)) : <h1>No Entry For This Day</h1>}
+        </MDBTypography>
+        <MDBTypography tag='div' className='display-5 pb-3 mb-3 border-bottom'>
+          <h1>Sunday {sundayAverage}</h1>
+          <div style={sunday.length > 0 ? { border: "1px solid rgb(220, 219, 220)" } : null} />
+          {sunday.length > 0 ? sunday.map((entry, idx) => (<EntryCard entry={entry} key={idx} />)) : <h1>No Entry For This Day</h1>}
+        </MDBTypography>
       </div>
-      {/* </div> */}
     </>
   );
 }

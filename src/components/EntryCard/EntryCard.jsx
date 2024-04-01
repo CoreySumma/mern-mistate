@@ -1,7 +1,5 @@
 import { Link } from 'react-router-dom'
 import './EntryCard.css'
-import { useState } from 'react'
-import {motion, AnimatePresence} from 'framer-motion'
 
 export default function EntryCard({ entry }) {
 
