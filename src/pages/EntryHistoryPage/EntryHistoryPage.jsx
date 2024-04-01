@@ -59,6 +59,7 @@ export default function EntryHistoryPage({ entries, handleDeleteAll }) {
     sortAndAverageEntries();
   }, [entries])
 
+
   return (
     <>
       <h1>Weekly Average {updatedAverageEmotion}</h1>
@@ -69,26 +70,19 @@ export default function EntryHistoryPage({ entries, handleDeleteAll }) {
         <button onClick= {() =>handleDeleteAll(entries)}>Delete All Entries</button>
         <hr />
         {/* <div className="days-container"> */}
-      {monday.length > 0 && 
-        <DayCard day="Monday" entries={monday} averageEmotion={convertToEmoji(averageEmotion(monday))} />}
+        <DayCard day="Monday" entries={monday} averageEmotion={convertToEmoji(averageEmotion(monday))} />
         <hr />
-      {tuesday.length > 0 && 
-        <DayCard day="Tuesday" entries={tuesday} averageEmotion={convertToEmoji(averageEmotion(tuesday))} />}
+        <DayCard day="Tuesday" entries={tuesday} averageEmotion={convertToEmoji(averageEmotion(tuesday))} />
         <hr />
-      {wednesday.length > 0 && 
-        <DayCard day="Wednesday" entries={wednesday} averageEmotion={convertToEmoji(averageEmotion(wednesday))} />}
+        <DayCard day="Wednesday" entries={wednesday} averageEmotion={convertToEmoji(averageEmotion(wednesday))} />
          <hr />
-      {thursday.length > 0 && 
-        <DayCard day="Thursday" entries={thursday} averageEmotion={convertToEmoji(averageEmotion(thursday))} />}
+        <DayCard day="Thursday" entries={thursday} averageEmotion={convertToEmoji(averageEmotion(thursday))} />
          <hr />
-      {friday.length > 0 && 
-        <DayCard day="Friday" entries={friday} averageEmotion={convertToEmoji(averageEmotion(friday))} />}
+        <DayCard day="Friday" entries={friday} averageEmotion={convertToEmoji(averageEmotion(friday))} />
          <hr />
-      {saturday.length > 0 && 
-        <DayCard day="Saturday" entries={saturday} averageEmotion={convertToEmoji(averageEmotion(saturday))} />}
+        <DayCard day="Saturday" entries={saturday} averageEmotion={convertToEmoji(averageEmotion(saturday))} />
          <hr />
-      {sunday.length > 0 && 
-        <DayCard day="Sunday" entries={sunday} averageEmotion={convertToEmoji(averageEmotion(sunday))} />}
+        <DayCard day="Sunday" entries={sunday} averageEmotion={convertToEmoji(averageEmotion(sunday))} />
          <hr />
       </div>
       {/* </div> */}
