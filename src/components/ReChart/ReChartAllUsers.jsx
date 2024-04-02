@@ -5,6 +5,7 @@ import {
   Line,
   XAxis,
   YAxis, 
+  Legend,
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
@@ -96,26 +97,29 @@ export default function ReChart({ entries, allUserEntries }) {
     data.allEmotions = data.allEmotions / data.allCount;
   });
   return (
-    // Use ReChart to create a line chart with the graphData object I made.
-    <ResponsiveContainer width="100%" height={400}>
+    <div className="chart-container">
+    {/* Use ReChart to create a line chart with the graphData object I made. */}
+    <ResponsiveContainer width="100%" height={400} style={{}}>
       <LineChart
         data={graphData}
         margin={{
-          top: 5,
-          right: 30,
-          left: 20,
-          bottom: 5,
+          top: 10,
+          right: 100,
+          left: 100,
+          bottom: 10,
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="day" />
-        <YAxis dataKey="emotion" tickCount={6} ticks={[0, 1, 2, 3, 4, 5]} />
-        <Tooltip />
+        <XAxis dataKey="day"  axisLine={{ stroke: "#ccc", strokeWidth: 5 }} tickLine={{ stroke: "#ccc", strokeWidth: 5 }}/>
+        <YAxis dataKey="emotion" tickCount={6} ticks={[0, 1, 2, 3, 4, 5]} axisLine={{ stroke: "#ccc", strokeWidth: 5 }} tickLine={{ stroke: "#ccc", strokeWidth: 5 }}/>
+        <Tooltip contentStyle={{ fontSize: '1rem' }}/>
+        <Legend wrapperStyle={{ fontSize: '2rem' }} />
         <Line
           type="monotone"
           dataKey="userEmotion"
           name="Your Emotion"
           stroke="#8884d8"
+          strokeWidth={4}
           activeDot={{ r: 8 }}
         />
         <Line
@@ -123,9 +127,11 @@ export default function ReChart({ entries, allUserEntries }) {
           dataKey="allEmotions"
           name="Other's Emotion"
           stroke="#82ca9d"
+          strokeWidth={4}
           activeDot={{ r: 8 }}
         />
       </LineChart>
     </ResponsiveContainer>
+    </div>
   );
 }

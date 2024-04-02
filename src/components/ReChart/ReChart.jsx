@@ -1,26 +1,29 @@
+// '../../../public/assets/lanscape3.jpg
 
+import "./ReChart.css";
 // Import Line chart from Rechart library
 import {
   LineChart,
   Line,
+  Legend,
   XAxis,
-  YAxis, 
+  YAxis,
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
 import React from "react";
 // Import the function to convert the emoji to a number
-// I will use the number to calculate the average emotion 
+// I will use the number to calculate the average emotion
 // the user feels for each day of the week.
 import convertToNumber from "../../utilities/emotion-convert-num";
 
 export default function ReChart({ entries }) {
-// Create an array of objects with the days of the week, the emotion(converted to a number),
-// and the count of entries for each day.
-// This will hold our data for the line chart and be used 
-// to calculate the average emotion of the user for each day they make
-// an entry.
+  // Create an array of objects with the days of the week, the emotion(converted to a number),
+  // and the count of entries for each day.
+  // This will hold our data for the line chart and be used
+  // to calculate the average emotion of the user for each day they make
+  // an entry.
   const graphData = [
     { day: "Sunday", emotion: 0, count: 0 },
     { day: "Monday", emotion: 0, count: 0 },
@@ -30,12 +33,12 @@ export default function ReChart({ entries }) {
     { day: "Friday", emotion: 0, count: 0 },
     { day: "Saturday", emotion: 0, count: 0 },
   ];
-  // If entries exists --> Loop through the entries 
+  // If entries exists --> Loop through the entries
   entries?.forEach((entry) => {
-    // I organize the data into the graphData array I made with the 
+    // I organize the data into the graphData array I made with the
     // day of the week and the emotion and update the values accordingly.
     // I add to the count of entries for each day so I can average it later.
-    // This line new Date(entry.createdAt).getDay() returns the day 
+    // This line new Date(entry.createdAt).getDay() returns the day
     // of the week - 0 being Sunday, and 6 being Saturday.
     if (new Date(entry.createdAt).getDay() === 0) {
       graphData[0].emotion += convertToNumber(entry.emotion);
@@ -82,34 +85,45 @@ export default function ReChart({ entries }) {
   //     </g>
   //   );
   // }
-  
-  
-
 
   return (
-    // Use ReChart to create a line chart with the graphData object I made.
-    <ResponsiveContainer width="100%" height={400}>
-      <LineChart
-        data={graphData}
-        margin={{
-          top: 5,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="day" />
-        <YAxis tickCount={6} ticks={[0, 1, 2, 3, 4, 5]} />
-        <Tooltip />
-        <Line
-          type="monotone"
-          dataKey="emotion"
-          name="Emotion"
-          stroke="#8884d8"
-          activeDot={{ r: 8 }}
-        />
-      </LineChart>
-    </ResponsiveContainer>
+    <div className="chart-container">
+      {/* Use ReChart to create a line chart with the graphData object I made. */}
+      <ResponsiveContainer width="100%" height={400} style={{}}>
+        <LineChart
+          data={graphData}
+          margin={{
+            top: 10,
+            right: 100,
+            left: 100,
+            bottom: 10,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" stroke="#ccc" strokeWidth={3} />
+          <XAxis
+            dataKey="day"
+            axisLine={{ stroke: "#ccc", strokeWidth: 5 }}
+            tickLine={{ stroke: "#ccc", strokeWidth: 5 }}
+          />
+          <YAxis
+            tickCount={6}
+            ticks={[0, 1, 2, 3, 4, 5]}
+            axisLine={{ stroke: "#ccc", strokeWidth: 5 }}
+            tickLine={{ stroke: "#ccc", strokeWidth: 5 }}
+          />
+          <Tooltip contentStyle={{ fontSize: '1rem' }} />
+          <Legend wrapperStyle={{ fontSize: '2rem' }} />
+          <Line
+            type="monotone"
+            dataKey="emotion"
+            name="Emotion"
+            stroke="#8884d8"
+            strokeWidth={4}
+            activeDot={{ r: 8 }}
+          />
+          
+        </LineChart>
+      </ResponsiveContainer>
+    </div>
   );
 }
