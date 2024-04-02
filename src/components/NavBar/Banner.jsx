@@ -4,7 +4,7 @@ import './Banner.css'
 export default function Banner() {
   return (
     <div className="banner">
-      MiState
+      <span className="banner-text">MiState</span>
     </div>
   )
 };

@@ -2,8 +2,9 @@
   text-align: center;
 }
 
+
 .main-content {
-  padding-top: 60px; /* For banner and navbar and content to work with spacing*/
+  padding-top: 165px; /* For banner and navbar and content to work with spacing*/
 }
 
 .App-header {

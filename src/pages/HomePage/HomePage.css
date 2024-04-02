@@ -1,6 +1,56 @@
+
+
 .center {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+/* Image Section Styles */
+.background-image-container {
+  background-image: url('../../../public/assets/lanscape3.jpg'); 
+  background-size: cover; 
+  background-position: center; 
+  position: relative; /* Needed for overlay positioning */
+  z-index: -1;
+}
+
+
+/* HomePage.css */
+.header-container {
+  background: white; /* Provides contrast against the colorful navbar */
+  border-radius: 15px; /* Softened edges for a modern look */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+  border: 2px solid #D3D3D3; /* Light grey border to define the container */
+  margin: 20px 0; /* Spacing between containers */
+  padding: 20px; /* Inner spacing for content */
+}
+
+/* Optional: Gradient border for containers to closely match the navbar */
+.section-container {
+  position: relative;
+  /* background: linear-gradient(to right, #8e2de2, #864df9); */
+  background: transparent;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 15px;
+  color: white;
+}
+
+.green-text {
+  color: #4CAF50; /* Green color for text */
+
+}
+
+.section-container::after {
+  content: '';
+  position: absolute;
+  top: -2px; /* Adjusts for the border size */
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  z-index: -1;
+  border-radius: 15px; /* Matches the container's border-radius */
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
 }
