@@ -1,10 +1,6 @@
 @import url("https://rsms.me/inter/inter.css");
 
-/* html {
-  font-family: "Inter";
-  width: 550px;
-  height: 750px;
-} */
+
 /* Not a good approach but we need to make sure to override bootstrap library */
 /* I now hate bootstrap. Going fully custom from now on */
 .btn {
@@ -32,6 +28,8 @@
 .navbar {
   width: 250px!important;
   height: 550px!important;
+  left:11px!important;
+  top: 11px!important;
   margin: none!important;
   border-radius: 16px!important;
   /* background-color: turquoise!important; */
