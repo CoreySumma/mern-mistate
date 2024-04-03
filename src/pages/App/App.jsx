@@ -16,7 +16,12 @@ import Footer from "../../components/Footer/Footer";
 import Banner from "../../components/NavBar/Banner";
 // We move these into src to import and dynamically change background images
 import landscape1 from "../../backgroundImages/landscape1.jpg";
+import landscape2 from "../../backgroundImages/landscape2.jpg";
 import landscape3 from "../../backgroundImages/landscape3.jpg";
+import landscape4 from "../../backgroundImages/landscape4.jpg";
+import landscape5 from "../../backgroundImages/landscape5.jpg";
+import landscape6 from "../../backgroundImages/landscape6.jpg";
+import clouds1 from "../../backgroundImages/clouds1.jpg";
 
 
 
@@ -24,8 +29,8 @@ import landscape3 from "../../backgroundImages/landscape3.jpg";
 const backgroundImages = {
   home: landscape3,
   entries: landscape1,
-  everyone: '',
-  new: '',
+  everyone: landscape6,
+  new: clouds1,
   detail: '',
   update: '',
 };
@@ -36,6 +41,8 @@ function findImage(path) {
       return backgroundImages.home;
     case '/entries':
       return backgroundImages.entries;
+    case '/everyone':
+      return backgroundImages.everyone;
       default:
         return '';
   }
