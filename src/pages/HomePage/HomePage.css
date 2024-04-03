@@ -11,12 +11,8 @@
   flex-direction: column; 
   justify-content: center; 
   align-items: center;
-  background-image: url('../../../public/assets/lanscape3.jpg'); 
-  background-size: cover; 
-  background-position: center; 
-  position: relative; 
-  z-index: -1;
-  top: -14rem;
+  z-index: 1;
+  color: black!important;
 }
 
 
@@ -27,7 +23,6 @@
   justify-content: center;
   width: 70%;
   position: relative;
-  /* background: linear-gradient(to right, #8e2de2, #864df9); */
   background: transparent;
   padding: 20px;
   margin-top: 10rem!important;
@@ -46,9 +41,4 @@
   background: transparent;
   border-radius: 15px;
   color: white;
-}
-
-.green-text {
-  color: #4CAF50; /* Green color for text */
-
 }

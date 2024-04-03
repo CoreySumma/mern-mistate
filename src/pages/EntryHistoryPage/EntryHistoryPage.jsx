@@ -62,6 +62,7 @@ export default function EntryHistoryPage({ entries, handleDeleteAll }) {
 
   return (
     <>
+    <div className="background">
       <h1 className="title">Weekly Average {updatedAverageEmotion}</h1>
       <p>Emotions are measured on a scale of 0 - 5</p>
         <ReChart entries={entries}/>
@@ -83,6 +84,7 @@ export default function EntryHistoryPage({ entries, handleDeleteAll }) {
         <DayCard day="Sunday" entries={sunday} averageEmotion={convertToEmoji(averageEmotion(sunday))} />
          <hr />
         <button onClick= {() =>handleDeleteAll(entries)}>Delete All Entries</button>
+        </div>
     </>
   );
 }

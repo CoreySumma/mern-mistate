@@ -12,8 +12,9 @@ export default function EntryDetailPage({ entries, handleDelete }) {
       {entry && <>
         <MDBTypography tag='div' className='display-6 pb-3 mb-3 border-bottom'>
           {/* <div>{entry.emotion}</div> */}
-          <div><u>{entry.title}</u></div>
-          <img className="imgClass" src="/assets/notebook.png" />
+          <div className="title"><u>{entry.title}</u></div>
+          {/* <img className="imgClass" src="/assets/notebook.png" /> */}
+          <br />
           <div>{new Date(entry.updatedAt).toLocaleDateString()}</div>
         </MDBTypography>
         <MDBTypography tag='div' className='display-6 pb-3 mb-3 border-bottom'>

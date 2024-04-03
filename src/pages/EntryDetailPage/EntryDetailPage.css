@@ -1,0 +1,19 @@
+.entry-detail-background {
+  position: relative;
+  min-height: 100vh; /* Full viewport height */
+  width: 100%; /* Full viewport width */
+  background-image: url('../../../public/assets/lanscape1.jpg'); /* Path to your image */
+  background-size: cover; /* Cover the entire page */
+  background-position: center; /* Center the background image */
+}
+
+.entry-detail-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(26, 30, 69, 0.7); /* Your color with transparency */
+  z-index: 1;
+}

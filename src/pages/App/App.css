@@ -1,10 +1,12 @@
 .App {
   text-align: center;
+  height: auto!important;
+  overflow: hidden!important;
 }
 
 
 .main-content {
-  padding-top: 165px; /* For banner and navbar and content to work with spacing*/
+  padding-top: 165px; 
 }
 
 .App-header {
@@ -16,4 +18,14 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.background-container {
+  position: relative;
+  min-height: 100vh; /* Ensure it covers the full viewport height */
+  /* background-image: url('../../../public/assets/lanscape3.jpg');  */
+  background-image: url(''); 
+  background-size: cover;
+  background-position: center;
+  background-attachment: scroll; 
 }

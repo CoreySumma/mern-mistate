@@ -11,6 +11,10 @@
   --text-dark: #615954;
 }
 
+.title {
+  margin-top: -5rem!important;
+}
+
 *, *:before, *:after {
   box-sizing: border-box;
 }
@@ -23,9 +27,10 @@ body {
   font-family: 'Poppins', sans-serif!important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--tan-4);
-  height: 100vh;
+ 
 }
+
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
