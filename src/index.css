@@ -13,6 +13,7 @@
 
 .title {
   margin-top: -5rem!important;
+  color: white;
 }
 
 *, *:before, *:after {
@@ -30,7 +31,9 @@ body {
  
 }
 
-
+.page-container {
+  padding-top: 10rem!important;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

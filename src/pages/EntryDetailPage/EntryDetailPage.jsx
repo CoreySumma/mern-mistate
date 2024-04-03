@@ -31,12 +31,11 @@ export default function EntryDetailPage({ entries, handleDelete }) {
             tag="div"
             className="display-6 pb-3 mb-3 border-bottom"
           >
-            {/* <div>{entry.emotion}</div> */}
             <div className="title">
               <em>{entry.title}</em>
             </div>
             <br />
-            <p>{new Date(entry.updatedAt).toLocaleDateString()}{' @ '}{time}</p>
+            <p>{dayName}{'('}{new Date(entry.updatedAt).toLocaleDateString()}{')'}{' @ '}{time}</p>
           </MDBTypography>
           <MDBTypography
             tag="div"
@@ -45,10 +44,10 @@ export default function EntryDetailPage({ entries, handleDelete }) {
             <div>{entry.text}</div>
           </MDBTypography>
           <button onClick={() => navigate(`/entries/${entry._id}/update`)}>
-            Edit This Entry
+            Edit
           </button>
           <button onClick={() => handleDelete(entry._id)}>
-            Delete This Entry
+            Delete
           </button>
         </>
       )}

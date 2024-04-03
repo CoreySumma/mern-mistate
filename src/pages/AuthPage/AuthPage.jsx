@@ -7,7 +7,6 @@ export default function AuthPage({ setUser }) {
   return (
     <main>
       <h1>MiState</h1>
-      <h2>Login/Signup<br /></h2>
       <div>
         <button onClick={() => setShowSignUp(!showSignUp)}>{showSignUp ? 'Log In' : 'Sign Up'}</button>
       </div>
@@ -16,9 +15,6 @@ export default function AuthPage({ setUser }) {
         :
         <LoginForm setUser={setUser} />
       }
-      <div className=''>
-      <img id='move' className='imgClass' src="/assets/login.png" />
-      </div>
     </main>
   );
 }

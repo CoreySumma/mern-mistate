@@ -1,9 +1,4 @@
-.center {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+
 /* I am never using this bootstrap library ever again (angry face)*/
 .button-container {
   grid-column: 1 / -1; /* This will make the button span from the first grid line to the last grid line, effectively centering it */
@@ -26,18 +21,5 @@ button {
   border: none;
 }
 
-.field-container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
 
-.label-container {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
+

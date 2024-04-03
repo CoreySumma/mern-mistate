@@ -27,8 +27,6 @@ import clouds3 from "../../backgroundImages/clouds3.jpg";
 import clouds4 from "../../backgroundImages/clouds4.jpg";
 import clouds5 from "../../backgroundImages/clouds5.jpg";
 
-
-
 // Map for easy image reference
 const backgroundImages = {
   home: landscape3,
@@ -39,13 +37,13 @@ const backgroundImages = {
 // Function to find the correct image for the background depending on path
 function findImage(path) {
   switch (path) {
-    case '/':
+    case "/":
       return backgroundImages.home;
-    case '/entries':
+    case "/entries":
       return backgroundImages.entries;
-    case '/everyone':
+    case "/everyone":
       return backgroundImages.everyone;
-      default:
+    default:
       return backgroundImages.detail;
   }
 }
@@ -57,7 +55,6 @@ export default function App() {
   const navigate = useNavigate();
   const location = useLocation();
   const useThisImage = findImage(location.pathname);
- 
 
   async function addEntry(entry) {
     const newEntry = await entryAPI.create(entry);
@@ -102,7 +99,10 @@ export default function App() {
       {user ? (
         <>
           <Banner />
-          <div className="background-container" style={{backgroundImage: `url(${useThisImage})`}}>
+          <div
+            className="background-container"
+            style={{ backgroundImage: `url(${useThisImage})` }}
+          >
             <Navbar user={user} setUser={setUser} />
             <Routes>
               {/* Route components in here */}

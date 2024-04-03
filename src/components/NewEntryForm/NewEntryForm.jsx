@@ -38,7 +38,7 @@ export default function NewEntryForm({ addEntry }) {
           }}
         >
           <form onSubmit={handleSubmit}>
-            <label style={{ fontSize: "25px"}}>Title:</label>
+            <label style={{ fontSize: "25px", color: "white"}}>Title:</label>
             <input
               style={{ fontSize: "25px" }}
               name="title"
@@ -50,7 +50,7 @@ export default function NewEntryForm({ addEntry }) {
               pattern=".{1,}"
             />
 
-            <label style={{ fontSize: "25px"}}>Entry For Today:</label>
+            <label style={{ fontSize: "25px", color: "white"}}>Entry For Today:</label>
             <MDBTextArea
               style={{ fontSize: "25px", backgroundColor: "white" }}
               columns={40}
@@ -64,7 +64,7 @@ export default function NewEntryForm({ addEntry }) {
               pattern=".{1,}"
             />
 
-            <label style={{fontSize: "25px" }}>Emotion:</label>
+            <label style={{fontSize: "25px", color: "white" }}>Emotion:</label>
             <select
               name="emotion"
               value={entryContent.emotion}

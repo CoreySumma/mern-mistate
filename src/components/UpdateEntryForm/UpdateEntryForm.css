@@ -1,0 +1,21 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: transparent;
+  border: none;
+}
+
+/* I am never using this bootstrap library ever again (angry face)*/
+.button-container {
+  grid-column: 1 / -1; /* This will make the button span from the first grid line to the last grid line, effectively centering it */
+  display: flex;
+  justify-content: center; /* Additional centering to ensure the button is centered within the spanned area */
+  margin-top: 20px; /* Adjust the margin as needed */
+}
+
+button {
+  width: 10rem;
+}

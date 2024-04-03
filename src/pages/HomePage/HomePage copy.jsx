@@ -1,5 +1,4 @@
 import { MDBContainer, MDBIcon } from "mdb-react-ui-kit";
-import { motion } from "framer-motion";
 import "./HomePage.css";
 import "../../index.css";
 

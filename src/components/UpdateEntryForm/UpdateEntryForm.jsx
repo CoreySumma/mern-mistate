@@ -1,23 +1,27 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { MDBTextArea, MDBCard } from 'mdb-react-ui-kit';
+import { MDBTextArea, MDBCard } from "mdb-react-ui-kit";
+import "./UpdateEntryForm.css";
 
 export default function UpdateEntryForm({ entries, handleUpdateEntry, user }) {
   const { id } = useParams();
   const navigate = useNavigate();
-  const updateEntry = entries.find(entry => entry._id === id);
+  const updateEntry = entries.find((entry) => entry._id === id);
   const [formData, setFormData] = useState(updateEntry);
 
   function handleChange(evt) {
-    const updatedEntryForm = { ...updateEntry, [evt.target.name]: evt.target.value }
+    const updatedEntryForm = {
+      ...updateEntry,
+      [evt.target.name]: evt.target.value,
+    };
     setFormData(updatedEntryForm);
   }
 
   function handleSubmit(evt) {
     evt.preventDefault();
     handleUpdateEntry(formData, id);
-    navigate('/entries')
+    navigate("/entries");
   }
 
   useEffect(() => {
@@ -25,26 +29,42 @@ export default function UpdateEntryForm({ entries, handleUpdateEntry, user }) {
       setFormData(updateEntry);
     }
     setEntry();
-  }, [updateEntry])
+  }, [updateEntry]);
 
   return (
-    <div>
-      {formData && <>
-        <MDBCard>
-          <h1>Second thoughts?</h1>
-          <form onSubmit={handleSubmit}>
-            <label style={{ fontSize: '25px' }}>Updated Entry:</label>
-            <MDBTextArea
-              style={{ fontSize: '25px' }}
-              name="text"
-              type="text"
-              rows={4}
-              value={formData.text}
-              onChange={handleChange} />
-            <button type="submit">Save My Changes</button>
-          </form>
-        </MDBCard>
-      </>}
+    <div className="page-container">
+      {formData && (
+        <>
+          <div className="form-container">
+            <MDBCard
+              style={{
+                backgroundColor: "rgba(255, 255, 255, 0)",
+                border: "none",
+                boxShadow: "none",
+                width: "85%",
+              }}
+            >
+              <h1 className="title" style={{color: "white"}}>Second thoughts?</h1>
+              <br />
+              <form onSubmit={handleSubmit}>
+                <label style={{ fontSize: "25px", color: "white" }}>Updated Entry:</label>
+                <MDBTextArea
+                  style={{ fontSize: "25px", backgroundColor: "white" }}
+                  columns={40}
+                  rows={6}
+                  name="text"
+                  type="text"
+                  value={formData.text}
+                  onChange={handleChange}
+                />
+                <div className="button-container">
+                  <button type="submit">Update</button>
+                </div>
+              </form>
+            </MDBCard>
+          </div>
+        </>
+      )}
     </div>
-  )
+  );
 }
