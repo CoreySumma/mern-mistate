@@ -23,6 +23,9 @@ import landscape5 from "../../backgroundImages/landscape5.jpg";
 import landscape6 from "../../backgroundImages/landscape6.jpg";
 import clouds1 from "../../backgroundImages/clouds1.jpg";
 import clouds2 from "../../backgroundImages/clouds2.jpg";
+import clouds3 from "../../backgroundImages/clouds3.jpg";
+import clouds4 from "../../backgroundImages/clouds4.jpg";
+import clouds5 from "../../backgroundImages/clouds5.jpg";
 
 
 
@@ -31,7 +34,7 @@ const backgroundImages = {
   home: landscape3,
   entries: landscape1,
   everyone: landscape6,
-  detail: clouds1,
+  detail: clouds4,
 };
 // Function to find the correct image for the background depending on path
 function findImage(path) {
