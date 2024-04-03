@@ -28,10 +28,13 @@ export default function NewEntryForm({ addEntry }) {
 
   return (
     <>
+    <div className="card-container">
       <MDBCard
         style={{
           backgroundColor: "rgba(255, 255, 255, 0)",
-          borderRadius: "15px",
+          border: "none",
+          boxShadow: "none",
+          width: "85%",
         }}
       >
         <form onSubmit={handleSubmit}>
@@ -92,6 +95,7 @@ export default function NewEntryForm({ addEntry }) {
           {/* </div> */}
         </form>
       </MDBCard>
+      </div>
     </>
   );
 }
