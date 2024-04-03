@@ -31,6 +31,9 @@ export default function AuthPage({ setUser }) {
           <LoginForm setUser={setUser} />
         )}
       </div>
+      <p className="lead grey-text text-center w-responsive mx-auto mb-5">
+        Take a tour of your emotions with Email: guest123@email.com - Pw: visitor123!
+      </p>
     </main>
   );
 }
