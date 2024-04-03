@@ -5,7 +5,7 @@ export default function NewEntryPage({ user, addEntry }) {
   return (
     <>
     <div className="page-container">
-    <h1 className='title'>How are you {user.name}?</h1>
+    <h1 className='title'>How are you, {user.name}?</h1>
     < NewEntryForm user={user} addEntry={addEntry}/>
     </div>
     </>
