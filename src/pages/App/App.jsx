@@ -7,7 +7,7 @@ import HomePage from "../HomePage/HomePage";
 import LocationBasedStats from "../LocationBasedStats/LocationBasedStats";
 import NewEntryPage from "../NewEntryPage/NewEntryPage";
 import EntryHistoryPage from "../EntryHistoryPage/EntryHistoryPage";
-import Navbar from "../../components/NavBar/Navbar";
+import Navbar from "../../components/NavBar/NavBar";
 import EntryDetailPage from "../EntryDetailPage/EntryDetailPage";
 import * as entryAPI from "../../utilities/entries-api";
 import { useNavigate } from "react-router-dom";

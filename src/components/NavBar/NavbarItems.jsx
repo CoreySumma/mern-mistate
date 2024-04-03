@@ -1,9 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
-import "./Navbar.css";
+import "./NavBar.css";
 import * as userService from "../../utilities/users-service";
 
-export default function NavbarItems({ isToggled, setUser }) {
+export default function NavBarItems({ isToggled, setUser }) {
   // Function for log out link in the navbar
   function handleLogOut() {
     userService.logOut();

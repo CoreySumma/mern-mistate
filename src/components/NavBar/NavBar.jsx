@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import NavbarItems from "./NavbarItems";
+import NavbarItems from "./NavBarItems";
 import { motion, AnimatePresence } from "framer-motion";
-import "./Navbar.css";
+import "./NavBar.css";
 
 export default function Navbar(user, setUser) {
   const [isToggled, setToggle] = useState(false);
