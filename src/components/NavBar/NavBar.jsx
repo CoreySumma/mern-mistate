@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import NavbarItems from "./NavBarItems";
+import NavbarItems from "./NavbarItems";
 import { motion, AnimatePresence } from "framer-motion";
 import "./NavBar.css";
 
