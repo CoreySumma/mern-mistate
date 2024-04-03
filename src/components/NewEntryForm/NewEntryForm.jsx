@@ -28,7 +28,12 @@ export default function NewEntryForm({ addEntry }) {
 
   return (
     <>
-      <MDBCard>
+      <MDBCard
+        style={{
+          backgroundColor: "rgba(255, 255, 255, 0)",
+          borderRadius: "15px",
+        }}
+      >
         <form onSubmit={handleSubmit}>
           <label style={{ fontSize: "25px" }}>Title:</label>
           <input
@@ -44,7 +49,7 @@ export default function NewEntryForm({ addEntry }) {
 
           <label style={{ fontSize: "25px" }}>Entry For Today:</label>
           <MDBTextArea
-            style={{ fontSize: "25px" }}
+            style={{ fontSize: "25px", backgroundColor: "white" }}
             columns={40}
             rows={6}
             name="text"

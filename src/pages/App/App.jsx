@@ -43,6 +43,8 @@ function findImage(path) {
       return backgroundImages.entries;
     case '/everyone':
       return backgroundImages.everyone;
+    case '/entries/new':
+      return backgroundImages.new;
       default:
         return '';
   }
