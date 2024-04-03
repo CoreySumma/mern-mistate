@@ -52,7 +52,9 @@ export default class SignUpForm extends Component {
             <input style={{ fontSize: '25px' }} type="password" name="password" value={this.state.password} onChange={this.handleChange} required />
             <label style={{ fontSize: '25px' }}>Confirm</label>
             <input style={{ fontSize: '25px' }} type="password" name="confirm" value={this.state.confirm} onChange={this.handleChange} required />
+            <div className="button-container">
             <button type="submit" disabled={disable}>SIGN UP</button>
+            </div>
           </form>
         </div>
         <p className="error-message">&nbsp;{this.state.error}</p>

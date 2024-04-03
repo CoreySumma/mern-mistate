@@ -105,7 +105,6 @@ export default function App() {
           >
             <Navbar user={user} setUser={setUser} />
             <Routes>
-              {/* Route components in here */}
               <Route path="/" element={<HomePage user={user} />} />
               <Route
                 path="/entries"

@@ -36,7 +36,9 @@ export default function LoginForm({ setUser }) {
           <input style={{ fontSize: '25px' }} type="text" name="email" value={credentials.email} onChange={handleChange} required />
           <label style={{ fontSize: '25px' }}>Password</label>
           <input style={{ fontSize: '25px' }} type="password" name="password" value={credentials.password} onChange={handleChange} required />
+          <div className="button-container">
           <button type="submit">LOG IN</button>
+          </div>
         </form>
       </div>
       <p className="error-message">&nbsp;{error}</p>
