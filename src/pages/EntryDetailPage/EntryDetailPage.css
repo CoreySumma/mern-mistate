@@ -1,0 +1,12 @@
+.multiple-button-container {
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.button-container {
+  grid-column: 1 / -1; /* This will make the button span from the first grid line to the last grid line, effectively centering it */
+  display: flex;
+  justify-content: center; /* Additional centering to ensure the button is centered within the spanned area */
+  margin-top: 20px; /* Adjust the margin as needed */
+}

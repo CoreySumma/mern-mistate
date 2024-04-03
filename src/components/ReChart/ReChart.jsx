@@ -121,7 +121,6 @@ export default function ReChart({ entries }) {
             strokeWidth={4}
             activeDot={{ r: 8 }}
           />
-          
         </LineChart>
       </ResponsiveContainer>
     </div>

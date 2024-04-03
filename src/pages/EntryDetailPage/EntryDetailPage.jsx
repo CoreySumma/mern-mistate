@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { MDBTypography } from "mdb-react-ui-kit";
+import "./EntryDetailPage.css";
 
 export default function EntryDetailPage({ entries, handleDelete }) {
   const navigate = useNavigate();
@@ -35,7 +36,14 @@ export default function EntryDetailPage({ entries, handleDelete }) {
               <em>{entry.title}</em>
             </div>
             <br />
-            <p>{dayName}{'('}{new Date(entry.updatedAt).toLocaleDateString()}{')'}{' @ '}{time}</p>
+            <p>
+              {dayName}
+              {"("}
+              {new Date(entry.updatedAt).toLocaleDateString()}
+              {")"}
+              {" @ "}
+              {time}
+            </p>
           </MDBTypography>
           <MDBTypography
             tag="div"
@@ -43,12 +51,14 @@ export default function EntryDetailPage({ entries, handleDelete }) {
           >
             <div>{entry.text}</div>
           </MDBTypography>
-          <button onClick={() => navigate(`/entries/${entry._id}/update`)}>
-            Edit
-          </button>
-          <button onClick={() => handleDelete(entry._id)}>
-            Delete
-          </button>
+          <div className="button-container">
+            <div className="multiple-button-container">
+              <button onClick={() => navigate(`/entries/${entry._id}/update`)}>
+                Edit
+              </button>
+              <button onClick={() => handleDelete(entry._id)}>Delete</button>
+            </div>
+          </div>
         </>
       )}
     </div>
