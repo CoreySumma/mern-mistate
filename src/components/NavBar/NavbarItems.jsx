@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import "./NavBar.css";
+import "./Navbar.css";
 import * as userService from "../../utilities/users-service";
 
 export default function NavbarItems({ isToggled, setUser }) {
