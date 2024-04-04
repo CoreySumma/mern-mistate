@@ -30,12 +30,20 @@ export default function EntryDetailPage({ entries, handleDelete }) {
   const [scope2, animate2] = useAnimate();
 
   // Function to handle the mouse enter event
-  function handleMouseEnter() {
-    // Target each letter of edit and animate them
+  function handleMouseEnter1() {
+  // Target each letter of edit and animate them
     animate1([['.letter-edit', { y: -32 }, { duration: 0.2, delay: stagger(0.1) }]]);
   }
-  function handleMouseLeave() {
+  function handleMouseLeave1() {
     animate1([['.letter-edit', { y: 0 }, { duration: 0.2, delay: stagger(0.1) }]]);
+  }
+  // Function to handle the mouse enter event
+  function handleMouseEnter2() {
+    // Target each letter of edit and animate them
+    animate2([['.letter-delete', { y: -32 }, { duration: 0.2, delay: stagger(0.1) }]]);
+  }
+  function handleMouseLeave2() {
+    animate2([['.letter-delete', { y: 0 }, { duration: 0.2, delay: stagger(0.1) }]]);
   }
 
   return (
@@ -69,8 +77,8 @@ export default function EntryDetailPage({ entries, handleDelete }) {
             <div className="multiple-button-container">
               <button
                 className="custom-button"
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
+                onMouseEnter={handleMouseEnter1}
+                onMouseLeave={handleMouseLeave1}
                 onClick={() => navigate(`/entries/${entry._id}/update`)}
               >
                 <div ref={scope1}>
@@ -89,13 +97,13 @@ export default function EntryDetailPage({ entries, handleDelete }) {
                   </span>
                 </div>
               </button>
-              {/* <button
+              <button
                 className="custom-button"
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
+                onMouseEnter={handleMouseEnter2}
+                onMouseLeave={handleMouseLeave2}
                 onClick={() => handleDelete(entry._id)}
               >
-                <div ref={scope}>
+                <div ref={scope2}>
                   <span>
                     {["D", "e", "l", "e", "t", "e"].map((letter, index) => (
                       <span key={`${letter}-${index}`}>
@@ -110,7 +118,7 @@ export default function EntryDetailPage({ entries, handleDelete }) {
                     ))}
                   </span>
                 </div>
-              </button> */}
+              </button>
             </div>
           </div>
         </>
