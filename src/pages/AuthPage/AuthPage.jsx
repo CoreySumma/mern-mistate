@@ -32,7 +32,7 @@ export default function AuthPage({ setUser }) {
         )}
       </div>
       <p className="lead grey-text text-center w-responsive mx-auto mb-5">
-        Take a tour of your emotions with Email: guest123@email.com - Pw: visitor123!
+        Take a tour of your emotions with Email: guest@email.com - Pw: visitor123!
       </p>
     </main>
   );
