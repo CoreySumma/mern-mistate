@@ -1,7 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { MDBTypography } from "mdb-react-ui-kit";
-import { motion, useAnimate, stagger } from "framer-motion";
-import { useRef } from "react";
+import { useAnimate, stagger } from "framer-motion";
 import "./EntryDetailPage.css";
 
 export default function EntryDetailPage({ entries, handleDelete }) {

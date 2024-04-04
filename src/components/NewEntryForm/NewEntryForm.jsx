@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { MDBTextArea, MDBCard } from "mdb-react-ui-kit";
+import { useAnimate, stagger } from "framer-motion";
 import "./NewEntryForm.css";
 
 export default function NewEntryForm({ addEntry }) {
@@ -26,6 +27,17 @@ export default function NewEntryForm({ addEntry }) {
     setEntryContent({ ...entryContent, [evt.target.name]: evt.target.value });
   }
 
+  // Framer motion functions for hover affects
+  const [scope, animate] = useAnimate();
+
+  function handleMouseEnter() {
+    // Target each letter of edit and animate them
+    animate([[".letter", { y: -32 }, { duration: 0.2, delay: stagger(0.1) }]]);
+  }
+  function handleMouseLeave() {
+    animate([[".letter", { y: 0 }, { duration: 0.2, delay: stagger(0.1) }]]);
+  }
+
   return (
     <>
       <div className="form-container">
@@ -38,7 +50,7 @@ export default function NewEntryForm({ addEntry }) {
           }}
         >
           <form onSubmit={handleSubmit}>
-            <label style={{ fontSize: "25px", color: "white"}}>Title:</label>
+            <label style={{ fontSize: "25px", color: "white" }}>Title:</label>
             <input
               style={{ fontSize: "25px" }}
               name="title"
@@ -50,7 +62,9 @@ export default function NewEntryForm({ addEntry }) {
               pattern=".{1,}"
             />
 
-            <label style={{ fontSize: "25px", color: "white"}}>Entry For Today:</label>
+            <label style={{ fontSize: "25px", color: "white" }}>
+              Entry For Today:
+            </label>
             <MDBTextArea
               style={{ fontSize: "25px", backgroundColor: "white" }}
               columns={40}
@@ -64,7 +78,7 @@ export default function NewEntryForm({ addEntry }) {
               pattern=".{1,}"
             />
 
-            <label style={{fontSize: "25px", color: "white" }}>Emotion:</label>
+            <label style={{ fontSize: "25px", color: "white" }}>Emotion:</label>
             <select
               name="emotion"
               value={entryContent.emotion}
@@ -91,7 +105,28 @@ export default function NewEntryForm({ addEntry }) {
               </option>
             </select>
             <div className="button-container">
-              <button type="submit">Write To Journal</button>
+              <button
+                className="custom-button"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                type="submit"
+              >
+                <div ref={scope}>
+                  <span>
+                    {["S", "u", "b", "m", "i", "t"].map((letter, index) => (
+                      <span key={`${letter}-${index}`}>
+                        <span
+                          data-letter={letter}
+                          className="letter"
+                          key={`${letter}-${index}`}
+                        >
+                          {letter}
+                        </span>
+                      </span>
+                    ))}
+                  </span>
+                </div>
+              </button>
             </div>
           </form>
         </MDBCard>
