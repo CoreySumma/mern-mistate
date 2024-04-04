@@ -1,5 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { MDBTypography } from "mdb-react-ui-kit";
+import { motion, useAnimate, stagger } from "framer-motion";
+import { useRef } from "react";
 import "./EntryDetailPage.css";
 
 export default function EntryDetailPage({ entries, handleDelete }) {
@@ -23,6 +25,18 @@ export default function EntryDetailPage({ entries, handleDelete }) {
 
   // Get the time if entry as 11:59pm etc
   const time = new Date(entry.createdAt).toLocaleTimeString();
+  // Framer motion logic. We destructure values from useAnimate and save them in scope and animate.
+  const [scope1, animate1] = useAnimate();
+  const [scope2, animate2] = useAnimate();
+
+  // Function to handle the mouse enter event
+  function handleMouseEnter() {
+    // Target each letter of edit and animate them
+    animate1([['.letter-edit', { y: -32 }, { duration: 0.2, delay: stagger(0.1) }]]);
+  }
+  function handleMouseLeave() {
+    animate1([['.letter-edit', { y: 0 }, { duration: 0.2, delay: stagger(0.1) }]]);
+  }
 
   return (
     <div className="page-container">
@@ -53,10 +67,50 @@ export default function EntryDetailPage({ entries, handleDelete }) {
           </MDBTypography>
           <div className="button-container">
             <div className="multiple-button-container">
-              <button onClick={() => navigate(`/entries/${entry._id}/update`)}>
-                Edit
+              <button
+                className="custom-button"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                onClick={() => navigate(`/entries/${entry._id}/update`)}
+              >
+                <div ref={scope1}>
+                  <span>
+                    {["E", "d", "i", "t"].map((letter, index) => (
+                      <span key={`${letter}-${index}`}>
+                        <span
+                          data-letter={letter}
+                          className="letter-edit"
+                          key={`${letter}-${index}`}
+                        >
+                          {letter}
+                        </span>
+                      </span>
+                    ))}
+                  </span>
+                </div>
               </button>
-              <button onClick={() => handleDelete(entry._id)}>Delete</button>
+              {/* <button
+                className="custom-button"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                onClick={() => handleDelete(entry._id)}
+              >
+                <div ref={scope}>
+                  <span>
+                    {["D", "e", "l", "e", "t", "e"].map((letter, index) => (
+                      <span key={`${letter}-${index}`}>
+                        <span
+                          data-letter={letter}
+                          className="letter-delete"
+                          key={`${letter}-${index}`}
+                        >
+                          {letter}
+                        </span>
+                      </span>
+                    ))}
+                  </span>
+                </div>
+              </button> */}
             </div>
           </div>
         </>

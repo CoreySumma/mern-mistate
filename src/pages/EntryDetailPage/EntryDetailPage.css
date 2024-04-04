@@ -10,3 +10,36 @@
   justify-content: center; /* Additional centering to ensure the button is centered within the spanned area */
   margin-top: 20px; /* Adjust the margin as needed */
 }
+
+.custom-button {
+  position: relative !important;
+  border-radius: 9999px !important; /* Tailwind's rounded-full */
+  border: 2px solid black !important; /* Changed from border-blue-600 to black */
+  padding: 0.4rem 1.4rem !important; /* Tailwind's px-6 py-2 */
+  font-size: 1.25rem !important; /* Tailwind's text-2xl */
+  color: black !important; /* Changed from text-blue-600 to black */
+  transition: background-color 0.2s !important; /* Tailwind's transition-colors */
+  cursor: pointer !important;
+  background-color: white !important; /* Changed from bg-white to white */
+  overflow: hidden;
+}
+
+.custom-button:hover {
+  background-color: black !important; /* Changed from hover:bg-blue-600 to black */
+  color: white !important; /* Changed from hover:text-white to white */
+}
+
+.letter-edit, .letter-delete {
+  position: relative;
+  display: inline-block;
+  height: 2rem;
+  line-height: 2rem;
+}
+
+.letter-edit::after, .letter-delete::after {
+  content: attr(data-letter);
+  position: absolute;
+  left: 0;
+  top: 100%; 
+  height: 2rem;
+}
