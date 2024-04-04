@@ -16,6 +16,35 @@
   margin-top: 20px; /* Adjust the margin as needed */
 }
 
-button {
-  width: 10rem;
+.custom-button {
+  position: relative !important;
+  border-radius: 9999px !important; 
+  border: 2px solid black !important; 
+  padding: 0.24rem 1.4rem !important; 
+  font-size: 1.2rem !important; 
+  color: black !important; 
+  transition: background-color 0.2s !important; 
+  cursor: pointer !important;
+  background-color: white !important; 
+  overflow: hidden;
+}
+
+.custom-button:hover {
+  background-color: black !important; 
+  color: white !important; 
+}
+
+.letter {
+  position: relative;
+  display: inline-block;
+  height: 2rem;
+  line-height: 2rem;
+}
+
+.letter::after {
+  content: attr(data-letter);
+  position: absolute;
+  left: 0;
+  top: 100%; 
+  height: 2rem;
 }

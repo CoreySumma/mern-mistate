@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { MDBTextArea, MDBCard } from "mdb-react-ui-kit";
+import { useAnimate, stagger } from "framer-motion";
 import "./UpdateEntryForm.css";
 
 export default function UpdateEntryForm({ entries, handleUpdateEntry, user }) {
@@ -31,6 +32,16 @@ export default function UpdateEntryForm({ entries, handleUpdateEntry, user }) {
     setEntry();
   }, [updateEntry]);
 
+  // Framer motion functions for hover affects
+  const [scope, animate] = useAnimate();
+  function handleMouseEnter() {
+    // Target each letter of edit and animate them
+    animate([[".letter", { y: -32 }, { duration: 0.2, delay: stagger(0.1) }]]);
+  }
+  function handleMouseLeave() {
+    animate([[".letter", { y: 0 }, { duration: 0.2, delay: stagger(0.1) }]]);
+  }
+
   return (
     <div className="page-container">
       {formData && (
@@ -44,10 +55,14 @@ export default function UpdateEntryForm({ entries, handleUpdateEntry, user }) {
                 width: "85%",
               }}
             >
-              <h1 className="title" style={{color: "white"}}>Second thoughts?</h1>
+              <h1 className="title" style={{ color: "white" }}>
+                Second thoughts?
+              </h1>
               <br />
               <form onSubmit={handleSubmit}>
-                <label style={{ fontSize: "25px", color: "white" }}>Updated Entry:</label>
+                <label style={{ fontSize: "25px", color: "white" }}>
+                  Updated Entry:
+                </label>
                 <MDBTextArea
                   style={{ fontSize: "25px", backgroundColor: "white" }}
                   columns={40}
@@ -58,7 +73,31 @@ export default function UpdateEntryForm({ entries, handleUpdateEntry, user }) {
                   onChange={handleChange}
                 />
                 <div className="button-container">
-                  <button type="submit">Update</button>
+                  {/* <button type="submit">Update</button> */}
+                  <button
+                    className="custom-button"
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                    type="submit"
+                  >
+                    <div ref={scope}>
+                      <span>
+                        {["U", "p", "d", "a", "t", "e"].map(
+                          (letter, index) => (
+                            <span key={`${letter}-${index}`}>
+                              <span
+                                data-letter={letter}
+                                className="letter"
+                                key={`${letter}-${index}`}
+                              >
+                                {letter}
+                              </span>
+                            </span>
+                          )
+                        )}
+                      </span>
+                    </div>
+                  </button>
                 </div>
               </form>
             </MDBCard>
