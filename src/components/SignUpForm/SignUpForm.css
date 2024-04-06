@@ -4,3 +4,31 @@
   justify-content: center; /* Additional centering to ensure the button is centered within the spanned area */
   margin-top: 20px; /* Adjust the margin as needed */
 }
+
+.form-container {
+  padding: 3vmin;
+  border-radius: 1vmin;
+  width: 30% !important;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  margin: 0 auto;
+  position: relative;
+}
+
+@media only screen and (max-width: 600px) {
+  .form-container {
+    padding: 4vmin;
+    border-radius: 1vmin;
+    width: 90% !important;
+  
+  }
+  .form-container input,
+  .form-container label,
+  .form-container button {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1rem!important;
+  }
+}

@@ -16,16 +16,9 @@ import Footer from "../../components/Footer/Footer";
 import Banner from "../../components/NavBar/Banner";
 // We move these into src to import and dynamically change background images
 import landscape1 from "../../backgroundImages/landscape1.jpg";
-import landscape2 from "../../backgroundImages/landscape2.jpg";
 import landscape3 from "../../backgroundImages/landscape3.jpg";
-import landscape4 from "../../backgroundImages/landscape4.jpg";
-import landscape5 from "../../backgroundImages/landscape5.jpg";
 import landscape6 from "../../backgroundImages/landscape6.jpg";
-import clouds1 from "../../backgroundImages/clouds1.jpg";
-import clouds2 from "../../backgroundImages/clouds2.jpg";
-import clouds3 from "../../backgroundImages/clouds3.jpg";
 import clouds4 from "../../backgroundImages/clouds4.jpg";
-import clouds5 from "../../backgroundImages/clouds5.jpg";
 
 // Map for easy image reference
 const backgroundImages = {
@@ -91,7 +84,7 @@ export default function App() {
       }
       if (user) displayEntries();
     },
-    [user]
+    [user, entries]
   );
 
   return (

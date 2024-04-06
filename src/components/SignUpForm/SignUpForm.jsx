@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import { signUp } from '../../utilities/users-service';
 import { useNavigate } from 'react-router-dom';
+import './SignUpForm.css';
 
 export default class SignUpForm extends Component {
 
@@ -41,14 +42,13 @@ export default class SignUpForm extends Component {
   render() {
     const disable = this.state.password !== this.state.confirm;
     return (
-      <div>
-        <div className="form-container">
+      <div className='form-container'>
           <form autoComplete="off" onSubmit={this.handleSubmit}>
             <label style={{ fontSize: '25px' }}>Name</label>
             <input style={{ fontSize: '25px' }} type="text" name="name" value={this.state.name} onChange={this.handleChange} required />
             <label style={{ fontSize: '25px' }}>Email</label>
             <input style={{ fontSize: '25px' }} type="email" name="email" value={this.state.email} onChange={this.handleChange} required />
-            <label style={{ fontSize: '25px' }}>Password</label>
+            <label style={{ fontSize:'25px' }}>Password</label>
             <input style={{ fontSize: '25px' }} type="password" name="password" value={this.state.password} onChange={this.handleChange} required />
             <label style={{ fontSize: '25px' }}>Confirm</label>
             <input style={{ fontSize: '25px' }} type="password" name="confirm" value={this.state.confirm} onChange={this.handleChange} required />
@@ -56,7 +56,6 @@ export default class SignUpForm extends Component {
             <button type="submit" disabled={disable}>SIGN UP</button>
             </div>
           </form>
-        </div>
         <p className="error-message">&nbsp;{this.state.error}</p>
       </div>
     );

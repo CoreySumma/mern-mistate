@@ -1,5 +1,3 @@
-// '../../../public/assets/lanscape3.jpg
-
 import "./ReChart.css";
 // Import Line chart from Rechart library
 import {
@@ -17,7 +15,6 @@ import React from "react";
 // I will use the number to calculate the average emotion
 // the user feels for each day of the week.
 import convertToNumber from "../../utilities/emotion-convert-num";
-
 export default function ReChart({ entries }) {
   // Create an array of objects with the days of the week, the emotion(converted to a number),
   // and the count of entries for each day.

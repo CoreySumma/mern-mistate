@@ -22,7 +22,7 @@ export default function UpdateEntryForm({ entries, handleUpdateEntry, user }) {
   function handleSubmit(evt) {
     evt.preventDefault();
     handleUpdateEntry(formData, id);
-    navigate("/entries");
+    navigate('/entries');
   }
 
   useEffect(() => {
@@ -73,7 +73,6 @@ export default function UpdateEntryForm({ entries, handleUpdateEntry, user }) {
                   onChange={handleChange}
                 />
                 <div className="button-container">
-                  {/* <button type="submit">Update</button> */}
                   <button
                     className="custom-button"
                     onMouseEnter={handleMouseEnter}
