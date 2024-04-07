@@ -123,6 +123,7 @@ export default function App() {
                   <LocationBasedStats
                     entries={entries}
                     allUserEntries={allUserEntries}
+                    isMobile={isMobile}
                   />
                 }
               />

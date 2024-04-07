@@ -11,7 +11,6 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
-import React, { useEffect } from "react";
 // Import the function to convert the emoji to a number
 // I will use the number to calculate the average emotion
 // the user feels for each day of the week.
