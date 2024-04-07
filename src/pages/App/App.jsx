@@ -48,6 +48,12 @@ export default function App() {
   const navigate = useNavigate();
   const location = useLocation();
   const useThisImage = findImage(location.pathname);
+  // Check screen size for mobile or desktop so we can render different charts for each
+  const [isMobile, setIsMobile] = useState(false);
+  // Trigger the check when the component mounts(does not work for re-adjustements)
+  useEffect(() => {
+    window.innerWidth < 600 ? setIsMobile(true) : setIsMobile(false);
+  }, []);
 
   async function addEntry(entry) {
     const newEntry = await entryAPI.create(entry);
@@ -84,7 +90,7 @@ export default function App() {
       }
       if (user) displayEntries();
     },
-    [user, entries]
+    [user]
   );
 
   return (
@@ -107,6 +113,7 @@ export default function App() {
                     setEntries={setEntries}
                     entries={entries}
                     handleDeleteAll={handleDeleteAll}
+                    isMobile={isMobile}
                   />
                 }
               />

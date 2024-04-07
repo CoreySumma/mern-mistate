@@ -16,20 +16,20 @@ import React, { useEffect } from "react";
 // I will use the number to calculate the average emotion
 // the user feels for each day of the week.
 import convertToNumber from "../../utilities/emotion-convert-num";
-export default function ReChart({ entries }) {
+export default function ReChartMobile({ entries }) {
   // Create an array of objects with the days of the week, the emotion(converted to a number),
   // and the count of entries for each day.
   // This will hold our data for the line chart and be used
   // to calculate the average emotion of the user for each day they make
   // an entry.
   const graphData = [
-    { day: "Sunday", emotion: 0, count: 0 },
-    { day: "Monday", emotion: 0, count: 0 },
-    { day: "Tuesday", emotion: 0, count: 0 },
-    { day: "Wednesday", emotion: 0, count: 0 },
-    { day: "Thursday", emotion: 0, count: 0 },
-    { day: "Friday", emotion: 0, count: 0 },
-    { day: "Saturday", emotion: 0, count: 0 },
+    { day: "Sun", emotion: 0, count: 0 },
+    { day: "Mon", emotion: 0, count: 0 },
+    { day: "Tues", emotion: 0, count: 0 },
+    { day: "Wed", emotion: 0, count: 0 },
+    { day: "Thurs", emotion: 0, count: 0 },
+    { day: "Fri", emotion: 0, count: 0 },
+    { day: "Sat", emotion: 0, count: 0 },
   ];
   // If entries exists --> Loop through the entries
   entries?.forEach((entry) => {
@@ -83,25 +83,26 @@ export default function ReChart({ entries }) {
   return (
     <div className="chart-container">
       {/* Use ReChart to create a line chart with the graphData object I made. */}
-      <ResponsiveContainer width="100%" height={400} style={{}}>
+      <ResponsiveContainer width="100%" height={300} style={{}}>
         <LineChart
           data={graphData}
-          margin={{ top: 10, right: 100, left: 100, bottom: 10 }}
+          margin={{ top: 5, right: 26, left: -25, bottom: 5 }}
         >
-          <CartesianGrid strokeDasharray="3 3" stroke="#ccc" strokeWidth={3} />
+          <CartesianGrid strokeDasharray="3 3" stroke="#ccc" strokeWidth={2} />
           <XAxis
             dataKey="day"
-            axisLine={{ stroke: "#ccc", strokeWidth: 5 }}
-            tickLine={{ stroke: "#ccc", strokeWidth: 5 }}
+            interval={0}
+            axisLine={{ stroke: "#ccc", strokeWidth: 3 }}
+            tickLine={{ stroke: "#ccc", strokeWidth: 3 }}
           />
           <YAxis
             tickCount={6}
             ticks={[0, 1, 2, 3, 4, 5]}
-            axisLine={{ stroke: "#ccc", strokeWidth: 5 }}
-            tickLine={{ stroke: "#ccc", strokeWidth: 5 }}
+            axisLine={{ stroke: "#ccc", strokeWidth: 3 }}
+            tickLine={{ stroke: "#ccc", strokeWidth: 3 }}
           />
           <Tooltip contentStyle={{ fontSize: "1rem" }} />
-          <Legend wrapperStyle={{ fontSize: "2rem" }} />
+          <Legend wrapperStyle={{ fontSize: "1rem" }} />
           <Line
             type="monotone"
             dataKey="emotion"

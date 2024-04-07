@@ -3,10 +3,11 @@ import { useAnimate, stagger } from "framer-motion";
 import averageEmotion from "../../utilities/average-emotion";
 import convertToEmoji from "../../utilities/num-convert-emotion";
 import ReChart from "../../components/ReChart/ReChart";
+import ReChartMobile from "../../components/ReChart/ReChartMobile";
 import "./EntryHistoryPage.css";
 import DayCard from "../../components/DayCard/DayCard";
 
-export default function EntryHistoryPage({ entries, handleDeleteAll }) {
+export default function EntryHistoryPage({ entries, handleDeleteAll, isMobile }) {
   // State for each entry for each day of the week
   const [monday, setMonday] = useState([]);
   const [tuesday, setTuesday] = useState([]);
@@ -31,7 +32,6 @@ export default function EntryHistoryPage({ entries, handleDeleteAll }) {
   useEffect(() => {
     function sortAndAverageEntries() {
       setUpdatedAverageEmotion(convertToEmoji(averageEmotion(entries)));
-      console.log(entries);
       for (let i = 0; i < 7; i++) {
         const sortedEntries = entries.filter(function (entry) {
           const date = new Date(entry.createdAt);
@@ -72,10 +72,12 @@ export default function EntryHistoryPage({ entries, handleDeleteAll }) {
       <div className="background">
         <h1 className="title">Weekly Average {updatedAverageEmotion}</h1>
         <p>Emotions are measured on a scale of 0 - 5</p>
-        <ReChart entries={entries} />
+        {isMobile ? (
+        <ReChartMobile entries={entries} /> 
+        ) : (
+        <ReChart entries={entries} />)}
         <br />
         <hr />
-        {/* <div className="days-container"> */}
         <DayCard
           day="Monday"
           entries={monday}

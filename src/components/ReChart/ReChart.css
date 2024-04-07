@@ -1,11 +1,20 @@
 .chart-container {
-  /* background-color: white; */
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 10px;
-  /* background-image: url('../../../public/assets/clouds1.jpg'); */
   width: 80%;
-  margin: 0 auto; /* Center the container */
-  overflow: hidden; /* Ensures no overflow from the rounded corners */
+  margin: 0 auto; 
+  overflow: hidden; 
+}
+
+@media only screen and (max-width: 600px) {
+  .chart-container {
+    display: flex;
+    padding: 0%;
+    border-radius: 10px;
+    width: 100%;
+    margin-left: 0 auto;
+    overflow: hidden;
+  }
 }
