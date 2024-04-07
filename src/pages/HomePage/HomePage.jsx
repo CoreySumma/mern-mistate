@@ -35,7 +35,7 @@ export default function HomePage({ user }) {
           <section className="section-container">
             <h2 className="h2-responsive font-weight-bold text-center my-5">
               <MDBIcon fas icon="users" />
-              &nbsp;Connect and Compare: You're Not Alone:
+              &nbsp;Connect and Compare. You're Not Alone:
             </h2>
             <p className="lead grey-text text-center w-responsive mx-auto mb-5">
               Find comfort in numbers by comparing your emotional trends with
