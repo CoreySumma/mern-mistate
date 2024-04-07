@@ -22,7 +22,7 @@ export default function UpdateEntryForm({ entries, handleUpdateEntry, user }) {
   function handleSubmit(evt) {
     evt.preventDefault();
     handleUpdateEntry(formData, id);
-    navigate('/entries');
+    // navigate('/entries');
   }
 
   useEffect(() => {
@@ -81,19 +81,17 @@ export default function UpdateEntryForm({ entries, handleUpdateEntry, user }) {
                   >
                     <div ref={scope}>
                       <span>
-                        {["U", "p", "d", "a", "t", "e"].map(
-                          (letter, index) => (
-                            <span key={`${letter}-${index}`}>
-                              <span
-                                data-letter={letter}
-                                className="letter"
-                                key={`${letter}-${index}`}
-                              >
-                                {letter}
-                              </span>
+                        {["U", "p", "d", "a", "t", "e"].map((letter, index) => (
+                          <span key={`${letter}-${index}`}>
+                            <span
+                              data-letter={letter}
+                              className="letter"
+                              key={`${letter}-${index}`}
+                            >
+                              {letter}
                             </span>
-                          )
-                        )}
+                          </span>
+                        ))}
                       </span>
                     </div>
                   </button>

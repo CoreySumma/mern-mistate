@@ -30,6 +30,7 @@ export default function ReChartMobile({ entries }) {
     { day: "Fri", emotion: 0, count: 0 },
     { day: "Sat", emotion: 0, count: 0 },
   ];
+  console.log(entries);
   // If entries exists --> Loop through the entries
   entries?.forEach((entry) => {
     // I organize the data into the graphData array I made with the

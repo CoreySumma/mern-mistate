@@ -1,5 +1,4 @@
 import "./ReChart.css";
-import { useState } from "react";
 // Import Line chart from Rechart library
 import {
   LineChart,
@@ -11,7 +10,6 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
-import React, { useEffect } from "react";
 // Import the function to convert the emoji to a number
 // I will use the number to calculate the average emotion
 // the user feels for each day of the week.
@@ -31,6 +29,7 @@ export default function ReChart({ entries }) {
     { day: "Friday", emotion: 0, count: 0 },
     { day: "Saturday", emotion: 0, count: 0 },
   ];
+
   // If entries exists --> Loop through the entries
   entries?.forEach((entry) => {
     // I organize the data into the graphData array I made with the
@@ -59,7 +58,7 @@ export default function ReChart({ entries }) {
     } else if (new Date(entry.createdAt).getDay() === 6) {
       graphData[6].emotion += convertToNumber(entry.emotion);
       graphData[6].count++;
-    }
+    }  
   });
   // Calculate the average emotion for each day of the week using
   // a forEach loop after the first loop finishes.

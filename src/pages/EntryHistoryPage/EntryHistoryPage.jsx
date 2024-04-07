@@ -7,7 +7,11 @@ import ReChartMobile from "../../components/ReChart/ReChartMobile";
 import "./EntryHistoryPage.css";
 import DayCard from "../../components/DayCard/DayCard";
 
-export default function EntryHistoryPage({ entries, handleDeleteAll, isMobile }) {
+export default function EntryHistoryPage({
+  entries,
+  handleDeleteAll,
+  isMobile,
+}) {
   // State for each entry for each day of the week
   const [monday, setMonday] = useState([]);
   const [tuesday, setTuesday] = useState([]);
@@ -70,78 +74,81 @@ export default function EntryHistoryPage({ entries, handleDeleteAll, isMobile })
   return (
     <>
       <div className="background">
-        <h1 className="title">Weekly Average {updatedAverageEmotion}</h1>
-        <p>Emotions are measured on a scale of 0 - 5</p>
-        {isMobile ? (
-        <ReChartMobile entries={entries} /> 
-        ) : (
-        <ReChart entries={entries} />)}
-        <br />
-        <hr />
-        <DayCard
-          day="Monday"
-          entries={monday}
-          averageEmotion={convertToEmoji(averageEmotion(monday))}
-        />
-        <hr />
-        <DayCard
-          day="Tuesday"
-          entries={tuesday}
-          averageEmotion={convertToEmoji(averageEmotion(tuesday))}
-        />
-        <hr />
-        <DayCard
-          day="Wednesday"
-          entries={wednesday}
-          averageEmotion={convertToEmoji(averageEmotion(wednesday))}
-        />
-        <hr />
-        <DayCard
-          day="Thursday"
-          entries={thursday}
-          averageEmotion={convertToEmoji(averageEmotion(thursday))}
-        />
-        <hr />
-        <DayCard
-          day="Friday"
-          entries={friday}
-          averageEmotion={convertToEmoji(averageEmotion(friday))}
-        />
-        <hr />
-        <DayCard
-          day="Saturday"
-          entries={saturday}
-          averageEmotion={convertToEmoji(averageEmotion(saturday))}
-        />
-        <hr />
-        <DayCard
-          day="Sunday"
-          entries={sunday}
-          averageEmotion={convertToEmoji(averageEmotion(sunday))}
-        />
-        <hr />
-        <button
-          className="custom-button"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-          onClick={() => handleDeleteAll(entries)}
-        >
-          <div ref={scope}>
-            <span>
-              {["C", "l", "e", "a", "r", "\u00A0", "A", "l", "l"].map((letter, index) => (
-                <span key={`${letter}-${index}`}>
-                  <span
-                    data-letter={letter}
-                    className="letter"
-                    key={`${letter}-${index}`}
-                  >
-                    {letter}
-                  </span>
+            <h1 className="title">Weekly Average {updatedAverageEmotion}</h1>
+            <p>Emotions are measured on a scale of 0 - 5</p>
+            {isMobile ? (
+              <ReChartMobile entries={entries} />
+            ) : (
+              <ReChart entries={entries} />
+            )}
+            <br />
+            <hr />
+            <DayCard
+              day="Monday"
+              entries={monday}
+              averageEmotion={convertToEmoji(averageEmotion(monday))}
+            />
+            <hr />
+            <DayCard
+              day="Tuesday"
+              entries={tuesday}
+              averageEmotion={convertToEmoji(averageEmotion(tuesday))}
+            />
+            <hr />
+            <DayCard
+              day="Wednesday"
+              entries={wednesday}
+              averageEmotion={convertToEmoji(averageEmotion(wednesday))}
+            />
+            <hr />
+            <DayCard
+              day="Thursday"
+              entries={thursday}
+              averageEmotion={convertToEmoji(averageEmotion(thursday))}
+            />
+            <hr />
+            <DayCard
+              day="Friday"
+              entries={friday}
+              averageEmotion={convertToEmoji(averageEmotion(friday))}
+            />
+            <hr />
+            <DayCard
+              day="Saturday"
+              entries={saturday}
+              averageEmotion={convertToEmoji(averageEmotion(saturday))}
+            />
+            <hr />
+            <DayCard
+              day="Sunday"
+              entries={sunday}
+              averageEmotion={convertToEmoji(averageEmotion(sunday))}
+            />
+            <hr />
+            <button
+              className="custom-button"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              onClick={() => handleDeleteAll(entries)}
+            >
+              <div ref={scope}>
+                <span>
+                  {["C", "l", "e", "a", "r", "\u00A0", "A", "l", "l"].map(
+                    (letter, index) => (
+                      <span key={`${letter}-${index}`}>
+                        <span
+                          data-letter={letter}
+                          className="letter"
+                          key={`${letter}-${index}`}
+                        >
+                          {letter}
+                        </span>
+                      </span>
+                    )
+                  )}
                 </span>
-              ))}
-            </span>
-          </div>
-        </button>
+              </div>
+            </button>
       </div>
     </>
   );

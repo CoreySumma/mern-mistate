@@ -63,7 +63,8 @@ export default function App() {
   async function handleUpdateEntry(entryFormData, id) {
     await entryAPI.updateEntry(entryFormData, id);
     const updatedEntries = await entryAPI.index();
-    setEntries(updatedEntries);
+    setEntries(updatedEntries.entries);
+    navigate("/entries");
   }
 
   async function handleDelete(id) {
@@ -87,6 +88,7 @@ export default function App() {
         const entryData = await entryAPI.index();
         setEntries(entryData.entries);
         setAllUserEntries(entryData.allEntries);
+        console.log(entries);
       }
       if (user) displayEntries();
     },
