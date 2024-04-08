@@ -38,16 +38,7 @@
   src="public/assets/MyWeek2.png"
   width="800" height="400"
 />
-<img
-  src="public/assets/MiState Graph.png"
-  width="800" height="400"
-/>
 <br>
-  <br>
-<img
-  src="public/assets/.png"
-  width="800" height="400"
-/>
 <br>
 <h3 align="center">Everyone Else </h3>
 <img
