@@ -105,7 +105,7 @@ export default function ReChart({ entries, allUserEntries }) {
         margin={{
           top: 10,
           right: 100,
-          left: 100,
+          left: 40,
           bottom: 10,
         }}
       >

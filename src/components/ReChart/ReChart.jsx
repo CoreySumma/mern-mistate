@@ -85,7 +85,7 @@ export default function ReChart({ entries }) {
       <ResponsiveContainer width="100%" height={400} style={{}}>
         <LineChart
           data={graphData}
-          margin={{ top: 10, right: 100, left: 100, bottom: 10 }}
+          margin={{ top: 10, right: 100, left: 40, bottom: 10 }}
         >
           <CartesianGrid strokeDasharray="3 3" stroke="#ccc" strokeWidth={3} />
           <XAxis
