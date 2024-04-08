@@ -79,4 +79,5 @@
 
 ## Current Feature implementations:
 * Impliment geo location to access an average mood rating of other users logging their emotional state based on location.
+* Add GPT fueled suggestions when a user dips beneath their mood average for a given day.
 
