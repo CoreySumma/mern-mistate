@@ -38,6 +38,22 @@
   src="public/assets/MyWeek2.png"
   width="800" height="400"
 />
+<img
+  src="public/assets/MiState Graph.png"
+  width="800" height="400"
+/>
+<br>
+  <br>
+<img
+  src="public/assets/.png"
+  width="800" height="400"
+/>
+<br>
+<h3 align="center">Everyone Else </h3>
+<img
+  src="public/assets/Everyone.png"
+  width="800" height="400"
+ />
 <br>
 <h3 align="center">New Entry </h3>
 <img
@@ -71,6 +87,5 @@
 
 
 ## Current Feature implementations:
-* Add a feature to dynamically render a graph showing trends in the users emotional state.
 * Impliment geo location to access an average mood rating of other users logging THEIR emotional state.
-* Agrigate all emotional data into a second line chart to diaplay and cross reference with the current user.
+
