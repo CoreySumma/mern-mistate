@@ -78,5 +78,5 @@
 
 
 ## Current Feature implementations:
-* Impliment geo location to access an average mood rating of other users logging THEIR emotional state.
+* Impliment geo location to access an average mood rating of other users logging their emotional state based on location.
 
