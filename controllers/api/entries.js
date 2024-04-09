@@ -8,6 +8,7 @@ module.exports = {
   deleteAll
 }
 
+
 async function index(req, res) {
   const entries = await Entry.find({ user: req.user._id });
   const allEntries = await Entry.find({});

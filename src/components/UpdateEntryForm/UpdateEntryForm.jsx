@@ -1,13 +1,11 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 import { MDBTextArea, MDBCard } from "mdb-react-ui-kit";
 import { useAnimate, stagger } from "framer-motion";
 import "./UpdateEntryForm.css";
 
-export default function UpdateEntryForm({ entries, handleUpdateEntry, user }) {
+export default function UpdateEntryForm({ entries, handleUpdateEntry }) {
   const { id } = useParams();
-  const navigate = useNavigate();
   const updateEntry = entries.find((entry) => entry._id === id);
   const [formData, setFormData] = useState(updateEntry);
 
