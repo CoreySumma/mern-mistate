@@ -1,4 +1,3 @@
-import { color } from 'framer-motion';
 import NewEntryForm from '../../components/NewEntryForm/NewEntryForm';
 import './NewEntryPage.css'
 
