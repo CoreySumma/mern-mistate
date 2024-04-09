@@ -3,7 +3,6 @@ import "./DayCard.css";
 import EntryCard from "../EntryCard/EntryCard";
 import convertToEmoji from "../../utilities/num-convert-emotion";
 import { motion, AnimatePresence } from "framer-motion";
-import { useEffect } from "react";
 
 export default function DayCard({ day, entries, averageEmotion }) {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -19,10 +18,6 @@ export default function DayCard({ day, entries, averageEmotion }) {
     start: { opacity: 0 },
     end: { opacity: 1, transition: { staggerChildren: 0.1 } },
   };
-  useEffect(() => {
-    console.log("averageEmotion updated:", averageEmotion);
-  }, [averageEmotion]);
-
   return (
     <motion.div
       layout
@@ -47,7 +42,7 @@ export default function DayCard({ day, entries, averageEmotion }) {
             {entries.length > 0 ? (
               entries.map((entry) => (
                 <motion.div key={entry._id} layout>
-                  <EntryCard entry={entry} />
+                  <EntryCard entry={entry} averageEmotion={averageEmotion}/>
                 </motion.div>
               ))
             ) : (

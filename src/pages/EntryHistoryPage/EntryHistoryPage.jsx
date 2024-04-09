@@ -11,6 +11,20 @@ export default function EntryHistoryPage({
   entries,
   handleDeleteAll,
   isMobile,
+  mondayAverage,
+  setMondayAverage,
+  tuesdayAverage,
+  setTuesdayAverage,
+  wednesdayAverage,
+  setWednesdayAverage,
+  thursdayAverage,
+  setThursdayAverage,
+  fridayAverage,
+  setFridayAverage,
+  saturdayAverage,
+  setSaturdayAverage,
+  sundayAverage,
+  setSundayAverage,
 }) {
   // State for each entry for each day of the week
   const [monday, setMonday] = useState([]);
@@ -21,21 +35,12 @@ export default function EntryHistoryPage({
   const [saturday, setSaturday] = useState([]);
   const [sunday, setSunday] = useState([]);
 
-  // State for the average emotion for each day of the week
-  const [mondayAverage, setMondayAverage] = useState([]);
-  const [tuesdayAverage, setTuesdayAverage] = useState([]);
-  const [wednesdayAverage, setWednesdayAverage] = useState([]);
-  const [thursdaAverage, setThursdayAverage] = useState([]);
-  const [fridayAverage, setFridayAverage] = useState([]);
-  const [saturdayAverage, setSaturdayAverage] = useState([]);
-  const [sundayAverage, setSundayAverage] = useState([]);
-
-  const [updatedAverageEmotion, setUpdatedAverageEmotion] = useState([]);
+  const [weeklyAverageEmotion, setWeeklyAverageEmotion] = useState([]);
 
   // Sort and average the entries
   useEffect(() => {
     function sortAndAverageEntries() {
-      setUpdatedAverageEmotion(convertToEmoji(averageEmotion(entries)));
+      setWeeklyAverageEmotion(convertToEmoji(averageEmotion(entries)));
       for (let i = 0; i < 7; i++) {
         const sortedEntries = entries.filter(function (entry) {
           const date = new Date(entry.createdAt);
@@ -74,7 +79,7 @@ export default function EntryHistoryPage({
   return (
     <>
       <div className="background">
-        <h1 className="title">Weekly Average {updatedAverageEmotion}</h1>
+        <h1 className="title">Weekly Average {weeklyAverageEmotion}</h1>
         <p>Emotions are measured on a scale of 0 - 5</p>
         {isMobile ? (
           <ReChartMobile entries={entries} />
@@ -83,35 +88,19 @@ export default function EntryHistoryPage({
         )}
         <br />
         <hr />
-        <DayCard day="Monday" entries={monday} averageEmotion={mondayAverage} />
+        <DayCard day="Monday" entries={monday} averageEmotion={mondayAverage}/>
         <hr />
-        <DayCard
-          day="Tuesday"
-          entries={tuesday}
-          averageEmotion={tuesdayAverage}
-        />
+        <DayCard day="Tuesday" entries={tuesday} averageEmotion={tuesdayAverage} />
         <hr />
-        <DayCard
-          day="Wednesday"
-          entries={wednesday}
-          averageEmotion={wednesdayAverage}
-        />
+        <DayCard day="Wednesday" entries={wednesday} averageEmotion={wednesdayAverage}/>
         <hr />
-        <DayCard
-          day="Thursday"
-          entries={thursday}
-          averageEmotion={thursdaAverage}
-        />
+        <DayCard day="Thursday" entries={thursday} averageEmotion={thursdayAverage}/>
         <hr />
-        <DayCard day="Friday" entries={friday} averageEmotion={fridayAverage} />
+        <DayCard day="Friday" entries={friday} averageEmotion={fridayAverage}/>
         <hr />
-        <DayCard
-          day="Saturday"
-          entries={saturday}
-          averageEmotion={saturdayAverage}
-        />
+        <DayCard day="Saturday" entries={saturday} averageEmotion={saturdayAverage}/>
         <hr />
-        <DayCard day="Sunday" entries={sunday} averageEmotion={sundayAverage} />
+        <DayCard day="Sunday" entries={sunday} averageEmotion={sundayAverage}/>
         <hr />
         <button
           className="custom-button"

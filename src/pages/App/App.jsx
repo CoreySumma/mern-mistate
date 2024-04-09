@@ -45,6 +45,15 @@ export default function App() {
   const [user, setUser] = useState(getUser());
   const [entries, setEntries] = useState([]);
   const [allUserEntries, setAllUserEntries] = useState([]);
+  // State for the average emotion for each day of the week
+  // We need this top level to pass to child components
+  const [mondayAverage, setMondayAverage] = useState([]);
+  const [tuesdayAverage, setTuesdayAverage] = useState([]);
+  const [wednesdayAverage, setWednesdayAverage] = useState([]);
+  const [thursdaAverage, setThursdayAverage] = useState([]);
+  const [fridayAverage, setFridayAverage] = useState([]);
+  const [saturdayAverage, setSaturdayAverage] = useState([]);
+  const [sundayAverage, setSundayAverage] = useState([]);
   const navigate = useNavigate();
   const location = useLocation();
   const useThisImage = findImage(location.pathname);
@@ -116,6 +125,20 @@ export default function App() {
                     entries={entries}
                     handleDeleteAll={handleDeleteAll}
                     isMobile={isMobile}
+                    mondayAverage={mondayAverage}
+                    tuesdayAverage={tuesdayAverage}
+                    wednesdayAverage={wednesdayAverage}
+                    thursdayAverage={thursdaAverage}
+                    fridayAverage={fridayAverage}
+                    saturdayAverage={saturdayAverage}
+                    sundayAverage={sundayAverage}
+                    setMondayAverage={setMondayAverage}
+                    setTuesdayAverage={setTuesdayAverage}
+                    setWednesdayAverage={setWednesdayAverage}
+                    setThursdayAverage={setThursdayAverage}
+                    setFridayAverage={setFridayAverage}
+                    setSaturdayAverage={setSaturdayAverage}
+                    setSundayAverage={setSundayAverage}
                   />
                 }
               />
