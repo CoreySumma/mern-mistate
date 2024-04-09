@@ -11,6 +11,6 @@ export default function convertToEmoji(emotion) {
     case 1:
       return '😭';
     default:
-      return "";
+      return "😶";
   }
 }

@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import "./DayCard.css";
 import EntryCard from "../EntryCard/EntryCard";
+import convertToEmoji from "../../utilities/num-convert-emotion";
 import { motion, AnimatePresence } from "framer-motion";
+import { useEffect } from "react";
 
 export default function DayCard({ day, entries, averageEmotion }) {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -17,6 +19,9 @@ export default function DayCard({ day, entries, averageEmotion }) {
     start: { opacity: 0 },
     end: { opacity: 1, transition: { staggerChildren: 0.1 } },
   };
+  useEffect(() => {
+    console.log("averageEmotion updated:", averageEmotion);
+  }, [averageEmotion]);
 
   return (
     <motion.div
@@ -27,7 +32,9 @@ export default function DayCard({ day, entries, averageEmotion }) {
       className="day-card"
       onClick={() => setIsExpanded(!isExpanded)}
     >
-      <motion.h1 className="day-card-title" layout>{day}{' '}{!averageEmotion ? '😶' : averageEmotion} <hr /></motion.h1>
+      <motion.h1 className="day-card-title" layout>
+        {day} {convertToEmoji(averageEmotion)} <hr />
+      </motion.h1>
       <AnimatePresence>
         {isExpanded && (
           <motion.div
@@ -38,13 +45,15 @@ export default function DayCard({ day, entries, averageEmotion }) {
             layout
           >
             {entries.length > 0 ? (
-              entries.map(entry => (
-              <motion.div key={entry._id} layout>
-                <EntryCard entry={entry} />
-              </motion.div>
+              entries.map((entry) => (
+                <motion.div key={entry._id} layout>
+                  <EntryCard entry={entry} />
+                </motion.div>
               ))
-              ) : (
-              <motion.div className="empty-link" layout>No entries for this day.</motion.div> 
+            ) : (
+              <motion.div className="empty-link" layout>
+                No entries for this day.
+              </motion.div>
             )}
           </motion.div>
         )}
