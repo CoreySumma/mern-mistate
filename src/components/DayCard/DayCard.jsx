@@ -42,7 +42,7 @@ export default function DayCard({ day, entries, averageEmotion }) {
             {entries.length > 0 ? (
               entries.map((entry) => (
                 <motion.div key={entry._id} layout>
-                  <EntryCard entry={entry} averageEmotion={averageEmotion}/>
+                  <EntryCard entry={entry} averageEmotion={averageEmotion} />
                 </motion.div>
               ))
             ) : (

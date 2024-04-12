@@ -4,7 +4,8 @@ import { MDBTextArea, MDBCard } from "mdb-react-ui-kit";
 import { useAnimate, stagger } from "framer-motion";
 import "./NewEntryForm.css";
 
-export default function NewEntryForm({ addEntry }) {
+export default function NewEntryForm({ addEntry, user, currentDayAverage }) {
+  console.log(currentDayAverage)
   const navigate = useNavigate();
   const [entryContent, setEntryContent] = useState({
     title: "",
