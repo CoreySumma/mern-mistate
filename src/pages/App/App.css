@@ -22,8 +22,7 @@
 
 .background-container {
   position: relative;
-  min-height: 100vh; /* Ensure it covers the full viewport height */
-  /* background-image: url('../../../public/assets/lanscape3.jpg');  */
+  min-height: 100vh; 
   background-image: url(''); 
   background-size: cover;
   background-position: center;
